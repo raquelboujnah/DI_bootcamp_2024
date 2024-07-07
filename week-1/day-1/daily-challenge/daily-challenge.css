@@ -1,0 +1,46 @@
+body {
+    background-image: url("avenger-picture.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+
+nav, footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    padding: 20px;
+    justify-content: flex-end;
+    font-size: 120%;
+}
+
+footer {
+    justify-content: center;
+    
+}
+
+.fa-solid{
+    margin-right: 815px;
+    margin-top: 5px;
+}
+
+div, a {
+    padding: 0px 30px;
+    text-decoration: none;
+    color: white;
+}
+
+article {
+    margin-left: 50px;
+    margin-top: 300px;
+}
+
+header {
+    font-size: 300%;
+}
+
+p {
+    margin-right: 400px;
+    font-weight: bold;
+}

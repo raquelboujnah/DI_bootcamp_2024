@@ -1,0 +1,86 @@
+.row-1{
+    height: 500px;
+    width: 1250px;
+    position: relative;
+    padding: 20px 0px;
+}
+
+.row-2{
+    height: 500px;
+    width: 1250px;
+    position: relative;
+    padding: 20px 0px;
+}
+
+.row-3{
+    height: 500px;
+    width: 1250px;
+    position: relative;
+    padding: 20px 0px;
+}
+
+.card{
+    height: 500px;
+    width: 300px;
+    text-align: center;
+    float: left;
+    padding: 0px 5.5px;
+
+}
+
+.description{
+    margin: 10px;
+}
+
+.price{
+    margin: 10px;
+    color: #16a086;
+    font-weight: bold;
+}
+
+.bar{
+    font-size: 80%;
+    color: black;
+}
+
+.image{
+    position: relative;
+}
+
+.new{
+    border-radius: 50%;
+    background: #16a086;
+    border: solid #16a086;
+    color: white;
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: 30px;
+    font-weight: bold;
+}
+.pourcent{
+    border-radius: 50%;
+    background: #c31a1a;
+    border: solid #c31a1a;
+    color: white;
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+    position: absolute;
+    top: 100px;
+    font-weight: bold;
+    
+}  
+
+
+button{
+    background-color:white;
+    border: 1px solid rgb(190, 190, 190);
+    color: rgb(133, 128, 128);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+    cursor: pointer;
+
+}

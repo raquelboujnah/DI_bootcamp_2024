@@ -1,0 +1,53 @@
+nav{
+    background-color: black;
+    height: 50px;
+}
+
+#logo, #name{
+    color: white;
+    list-style-type: none;
+    display: inline-block;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+#name{
+    position: relative;
+    left: 1050px; 
+    top: 15px;
+    
+}
+
+#logo{
+    position: relative;
+    top: 15px;
+}
+
+footer{
+    background-color: black;
+    height: 30px;
+    position: relative;
+    top: 450px;
+    
+}
+
+#name-footer, #year{
+    color: white;
+    list-style-type: none;
+    display: inline-block;
+}
+
+#year{
+    position: relative;
+    left: 550px;
+}
+
+#name-footer{
+    position: relative;
+    left: 500px;
+}
+

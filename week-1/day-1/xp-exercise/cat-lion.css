@@ -1,0 +1,40 @@
+#yellowbg{
+    background-color: yellow;
+}
+
+#table-title{
+    border: 1px solid red;
+    color: red;
+    text-align: center;
+    padding: 5px 5px;
+    font-weight: bold;
+    
+}
+
+h2{
+    text-align: center;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 5px 5px;
+    text-align: center;
+}
+
+th{
+    font-weight: bold;
+}
+.picture {
+    height: 400px;
+    border: 5px solid orangered;
+    margin: 20px 0px
+}
+
+div{
+    text-align: center;
+}
+
+#cat-senses{
+    text-decoration: underline;
+    font-weight: bold;
+}

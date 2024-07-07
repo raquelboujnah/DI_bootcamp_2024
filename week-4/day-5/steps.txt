@@ -1,0 +1,37 @@
+screen 1, menu screen:
+    menu screen
+    introdution
+    explain the game
+    enter your name
+    1 button start the game --> display the next screen
+
+screen 2, player places his boat:
+    display player_board
+    presse h or v for horizontal and vertical
+    1 button "done" at the bottom
+    a message will be at the bottom of the board to inform the player the size of the current ship and his direction. he will need to click on the position he want the ship to start
+    when "done" button pressed next ship turn until 5 ship or display
+    the button turn into 'lets start' and if pressed diplay the guesse screen
+
+screen 3:
+    display player_guess_board
+    on the bottom in the middle
+        1 "done" button for finish his turn
+        text area to display what happened on each turn
+    if he choose an empty tile the tile should change to white
+    if he choose a tile where there is a boat it should turn to red 
+    if he sank a ship the enemie ship in question should appear
+    
+screen 4:
+    display player_board
+    if the computer choose an empty tile the tile should change to white
+    if the computer choose a tile where there is a boat it should turn to red 
+    if the computer sank a ship the player ship in question should turn to black
+    on the bottom in the middle
+        text area to display what happened on each turn
+
+screen 5:
+    display the winner
+    diaplay the database
+    button play again
+    

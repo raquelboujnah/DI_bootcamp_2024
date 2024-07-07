@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="day_lesson.js" defer async></script>
+  </head>
+  <body>
+    <!-- <button onClick="clickMe(event)">Click Me!</button>
+    <button id="btn">Click Me DOM!</button>
+
+    <input type="text" onInput="getvalue(event)" id="email" value="" />
+
+    <input type="password" id="password" placeholder="Enter your password"/>
+    <div></div> -->
+    <!-- 
+         200 x 200 
+         border of 1px
+         add event listner 
+         mouse over - change the bg color to - ???
+    -->
+    <!-- <div id="root">
+      <div id="main">
+        <button id="innerbutton">Click Me!!!</button>
+      </div>
+    </div> -->
+
+    <form onsubmit="formsubmit(event)" method="POST">
+      <input type="text" name="username" id="username" required />
+      <input type="email" name="email" id="email" disabled />
+      <input
+        type="number"
+        name="number"
+        min="2"
+        max="10"
+        id="number"
+        value="4"
+      />
+      <input type="password" >
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

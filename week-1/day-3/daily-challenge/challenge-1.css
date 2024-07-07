@@ -1,0 +1,36 @@
+.container {
+    border: 2px solid black;
+    height: 300px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.box {
+    border: 2px solid orangered;
+    background-color: yellow;
+    height: 50px;
+    width: 50px;
+}
+
+.middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}

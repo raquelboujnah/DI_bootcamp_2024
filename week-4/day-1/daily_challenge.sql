@@ -1,0 +1,25 @@
+-- create table actors(
+--  actor_id serial primary key,
+--  first_name varchar (50) not null,
+--  last_name varchar (100) not null,
+--  age date not null,
+--  number_oscars smallint not null
+-- );
+-- insert into actors (first_name, last_name, age, number_oscars)
+-- values
+-- ('Matt', 'Damon', '08/10/1970', 5),
+-- ('George', 'Clooney', '06/05/1961', 2),
+-- ('Brad', 'Pitt', '1980-04-22', 1),
+-- ('Matt', 'Damon', '1982-11-22', 2),
+-- ('Patrick', 'Jolie', '1980-04-22', 1),
+-- ('Marc', 'Benichou', '1998-11-02',0), 
+-- ('Yoan', 'Cohen', '2010-12-03', 0), 
+-- ('Lea',	'Benichou', '1987-07-27', 0), 
+-- ('Amelia', 'Dux', '1996-04-07', 0), 
+-- ('David', 'Grez', '2003-06-14', 0), 
+-- ('Omer', 'Simpson', '1980-10-03', 1); 
+
+-- select count(first_name) from actors
+-- insert into actors(first_name, last_name, age, number_oscars)
+-- values
+-- ('Raquel')

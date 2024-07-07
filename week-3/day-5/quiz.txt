@@ -1,0 +1,28 @@
+1. What is a class?
+    A class is like a big box who will contain all the function that we need. 
+    A class also allow us to creact several unique objects called instance but all connected to the same class.
+
+2. What is an instance?
+    An instance will be the object of the class, it will create his own data, you can create how many you want and each one would be unique. 
+    For exemple your account on github is an istance and github is the class. The instance can use any function he want in the class
+
+3. What is encapsulation?
+    Encapsulation is the first of the four pillars. Encapsulation is a way to build and control the data by using access modifiers like private, protected, and public.
+
+4. What is abstraction?
+    Abstraction is the second of the four pillars. Abstraction is here to take the data and store into many places and hide details that are not necessary. 
+    It helps for reducing complexity, making it easier to design and understand systems.
+
+5. What is inheritance?
+    Inheritance is the third of the four pillars. Inheritance allows you to create a new class based on an existing one called the "superclass". 
+    It will be able to use his attribute his methods and all his data. As i was told the super class is the parent and the new class will be the child.
+
+6. What is multiple inheritance?
+    Multiple inheritance allow to a class to be derived from more than one superclass.
+
+7. What is polymorphism?
+    Polymorphism is the last of the four pillars. Polymorphism is the opposite of multiply inheritance. Polymorphism is a way for a superclass to give his data to many classes, 
+    in other word, to have more than one child
+
+8. What is method resolution order or MRO?
+    MRO is a concept used in inheritance. It is a way to understand the order the inheritance will take if it's multiple. In Python, the MRO is from bottom to top and left to right
