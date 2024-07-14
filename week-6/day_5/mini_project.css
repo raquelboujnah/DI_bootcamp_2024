@@ -1,0 +1,79 @@
+body {
+    background-image: url(circuit-pattern.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: left top;
+    background-size: cover;
+    background-color: rgb(88, 70, 210);
+    margin: 0px;
+}
+
+nav {
+    display: flex;
+    background-color: rgb(106, 223, 130);;
+    height: 50px;
+}
+
+#searchbar {
+    border: 1px solid rgb(88, 70, 210);
+    border-radius: 2px;
+    background-color: rgb(200, 214, 229);
+    height: 25px;
+    width: 670px;
+    margin: 11px;
+    margin-left: 30px;
+}
+
+#title {
+    font-family: 'SEGA LOGO FONT', sans-serif;
+    color: rgb(48, 57, 82);
+    margin: 13px;
+    margin-left: 30px;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-image: url(card-pattern.png);
+    background-size: 150px;
+    background-color: rgb(79, 193, 197);
+    border-radius: 7px;
+    height: 300px;
+    width: 230px;
+    margin: 60px;
+}
+
+.circle {
+    background-color: rgb(48, 57, 82);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 16px;
+}
+
+.image {
+    height: 200px;
+    border-radius: 50%;
+    
+}
+
+.robotName, .robotEmail {
+    margin-left: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.robotEmail {
+    font-size: 13px;
+}
+
+.hidden {
+    display: none;
+}
+

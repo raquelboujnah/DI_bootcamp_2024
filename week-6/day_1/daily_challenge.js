@@ -22,11 +22,11 @@
 // displayGroceries();
 
 // let cloneGroceries = () => {
-//     let user = client
-//     client = 'Betty'
-//     let shopping = {...groceries}
-//     groceries.totalPrice = '35$'
-//     groceries.other.paid = false
+//     let user = client;
+//     user = 'Betty';
+//     let shopping = groceries;
+//     shopping.totalPrice = '35$'
+//     shopping.other.paid = false
 //     console.log(groceries);
 //     console.log(shopping);
 
