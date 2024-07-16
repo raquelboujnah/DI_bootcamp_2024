@@ -123,7 +123,7 @@ function toJs(json){
 }
 
 function toMorse(morseJs){
-    let userWord = prompt('enter a word or a sentence');
+    let userWord = prompt('enter a word or a sentence').toLowerCase();
     return new Promise((res, rej) => {
         let userMorse = []
         for (letter of userWord){
@@ -143,15 +143,11 @@ function joinWords(morseTranslation) {
     document.body.appendChild(resultDiv);
 }
 
-function translateToMorse() {
-    toJs(morse)
-        .then(morseJS => toMorse(morseJS))
-        .then(morseTranslation => joinWords(morseTranslation))
-        .catch(error => {
-            const errorDiv = document.createElement('div');
-            errorDiv.textContent = error;
-            document.body.appendChild(errorDiv);
-        });
-}
+toJs(morse)
+    .then(morseJS => toMorse(morseJS))
+    .then(morseTranslation => joinWords(morseTranslation))
+    .catch((err) => {
+        console.log(err);
+    });
 
-translateToMorse()
+
