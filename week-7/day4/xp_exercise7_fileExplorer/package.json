@@ -1,0 +1,13 @@
+{
+  "name": "xp_exercise7_fileexplorer",
+  "version": "1.0.0",
+  "main": "copy_file.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
