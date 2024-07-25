@@ -1,22 +1,14 @@
 import fs from "fs"
-export function readFile(){
-    try{
-    const data = fs.readFileSync("source.txt", "utf-8")
-    console.log(data);
-    }catch(e){
-        console.log(e);
-    }
-}
 
-readFile()
-
-export function copyFile(){
-    try{
-        fs.copyFileSync("source.txt", "destination.txt", "utf-8")
-    }catch(err){
+fs.readFile('source.txt', 'utf8', (err, data) => {
+    if (err) {
         console.log(err);
     }
-}
-
-copyFile()
+    fs.writeFile('destination.txt', data, 'utf8', (err) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log('copied');
+    });
+});
 

@@ -4,6 +4,9 @@ app.listen(5000, (res, req) => {
     console.log("run on 5000");
 });
 
+app.use(express.urlencoded({extended:true}));
+app.use(express.json())
+
 const books = [
     {
         id: 1,
@@ -48,8 +51,9 @@ app.get("/api/books/:id", (req, res) => {
     res.json(book).status(200)
 })
 
-app.post("/api/books", (res, req) => {
-    const newBook = {id: books.length + 1, title: "Moby Dick", author: "Herman Melville", publishedYear: 1851 }
+app.post("/api/books", (req, res) => {
+    const {title, author, publishedYear} = req.body
+    const newBook = {title, author, publishedYear, id: books.length + 1}
     books.push(newBook)
     res.json(books).status(200)
 })

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form id="registerForm" action="/register" method="POST">
+        <input type="text" name="firstName" id="firstName" placeholder="First Name" required><br>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required><br>
+        <input type="email" name="email" id="email" placeholder="Email" required><br>
+        <input type="text" name="username" id="username" placeholder="Username" required><br>
+        <input type="password" name="password" id="password" placeholder="Password" required><br>
+        <button type="submit" id="submitBtn" disabled>Register</button>
+    </form>
+    <p id="message"></p>
+
+
+    <script>
+        const form = document.forms[0];
+        const inputs = form.querySelectorAll('input');
+        const submitBtn = document.getElementById('submitBtn');
+        const message = document.getElementById('message');
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+                submitBtn.disabled = !allFilled;
+            });
+        });
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            const response = await fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            message.textContent = result.message;
+        });
+
+        
+    </script>
+    
+</body>
+</html>

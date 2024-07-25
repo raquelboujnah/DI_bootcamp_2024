@@ -4,6 +4,9 @@ app.listen(5001, () => {
     console.log('run on 5001');
 });
 
+app.use(express.urlencoded({extended:true}));
+app.use(express.json())
+
 const blogPosts = [
     {
         id: 1,
@@ -43,21 +46,21 @@ app.get("/posts/:id", (req, res) => {
     res.json(blog)
 });
 
-app.post("/posts/add", (req, res) => {
-    const newBlog = {id: products.length + 1, title: "Getting Started with Node.js", content: "Node.js is a powerful tool for building server-side applications. In this guide, we'll cover the basics..."}
-    products.push(newBlog);
+app.post("/posts/", (req, res) => {
+    const {title, content} = req.body
+    const newBlog = {title, content, id: blogPosts.length + 1}
+    blogPosts.push(newBlog);
     res.json(blogPosts);
 })
 
-app.put("/posts/update/:id", (req, res) => {
+
+app.put("/posts/:id", (req, res) => {
     const {id} = req.params;
-    const title = 'A Guide to Modern CSS Layouts'
-    const content = 'CSS has evolved significantly over the years, and modern CSS layouts offer more flexibility and control...'
+    const {title, content} = req.body
     const index = blogPosts.findIndex((item) => item.id == id);
     if (index === -1) {
         return res.status(404).json({ message: "not found" });
     }
-
     blogPosts[index] = {
         ...blogPosts[index],
         title,
@@ -66,7 +69,7 @@ app.put("/posts/update/:id", (req, res) => {
     res.json(blogPosts)
 })
 
-app.delete("/posts/delete/:id", (req, res) => {
+app.delete("/posts/:id", (req, res) => {
     const {id} = req.params;
     const index = blogPosts.findIndex((item) => item.id == id);
     if (index === -1) {

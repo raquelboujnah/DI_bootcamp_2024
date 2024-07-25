@@ -1,8 +1,10 @@
 import fs from "fs"
-let testFolder = "/xp_exercise7_fileExplorer"
 
-fs.readdir(testFolder, (err, files) => {
+fs.readdir('.', (err, files) => {
+    if (err) {
+        console.log();
+    }
     files.forEach(file => {
-       console.log(file);
+        console.log(file);
     });
 });

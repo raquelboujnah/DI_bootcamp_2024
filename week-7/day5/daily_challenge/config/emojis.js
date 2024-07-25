@@ -1,44 +1,44 @@
-const emoji = [
+const emojis = [
     {
-        character: "😀",
+        emoji: "😀",
         name: "Grinning Face"
     },
     {
-        character: "😂",
+        emoji: "😂",
         name: "Face with Tears of Joy"
     },
     {
-        character: "❤️",
+        emoji: "❤️",
         name: "Red Heart"
     },
     {
-        character: "😍",
+        emoji: "😍",
         name: "Smiling Face with Heart-Eyes"
     },
     {
-        character: "👍",
+        emoji: "👍",
         name: "Thumbs Up"
     },
     {
-        character: "🙏",
+        emoji: "🙏",
         name: "Folded Hands"
     },
     {
-        character: "🔥",
+        emoji: "🔥",
         name: "Fire"
     },
     {
-        character: "🎉",
+        emoji: "🎉",
         name: "Party Popper"
     },
     {
-        character: "🌟",
+        emoji: "🌟",
         name: "Glowing Star"
     },
     {
-        character: "🎈",
+        emoji: "🎈",
         name: "Balloon"
     }
 ];
 
-export default emojis;
+module.exports = emojis
