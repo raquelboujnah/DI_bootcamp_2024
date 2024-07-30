@@ -6,7 +6,7 @@
 // import Events from "./component/Event";
 // import Phone from "./component/Phone";
 // import Color from "./component/Color";
-import Voting from "./component/Voting";
+// import Voting from "./component/Voting";
 
 // function App() {
 //   return (
@@ -107,12 +107,42 @@ import Voting from "./component/Voting";
 // }
 
 //exercise2
-function App(){
-  return(
-    <div>
-      <Voting/>
-    </div>
-  )
-}
+// function App(){
+//   return(
+//     <div>
+//       <Events/>
+//     </div>
+//   )
+// }
+
+//erxercise3
+// function App(){
+//   return(
+//     <div>
+//       <Phone/>
+//     </div>
+//   )
+// }
+
+//erxercise4
+// function App(){
+//   return(
+//     <div>
+//       <Color/>
+//     </div>
+//   )
+// }
+
+
+//daily challenge
+// function App(){
+//   return(
+//     <div>
+//       <Voting/>
+//     </div>
+//   )
+// }
+
+
 
 export default App;

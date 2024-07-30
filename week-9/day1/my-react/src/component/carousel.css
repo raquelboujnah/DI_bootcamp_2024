@@ -1,0 +1,36 @@
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.large-image {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: 30px;
+
+}
+  
+.large-image img {
+    width: 70%;
+    height: auto;
+}
+  
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+  
+.thumbnail {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+  
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+ 
