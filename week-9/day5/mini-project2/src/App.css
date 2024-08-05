@@ -1,0 +1,54 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  color: rgb(229, 5, 229)
+}
+
+.linkContainer{
+  margin-bottom: 20px;
+}
+
+.link{
+  background-color: rgb(229, 5, 229);
+  text-decoration: none;
+  color: white;
+  padding: 2px 30px;
+  border-radius: 3px;
+  margin: 0px 8px;
+}
+
+.search{
+  width: 250px;
+  height: 25px;
+  border: 1.5px solid rgb(229, 5, 229);
+  border-radius: 2px;
+}
+
+.button{
+  background-color: rgb(229, 5, 229);
+  border: 1.5px solid rgb(229, 5, 229);
+  height: 29.5px;
+  border-radius: 2px;
+  color: white;
+}
+
+.imageContainer {
+  width: 70%;
+  margin-top: 50px;
+  margin-left: 170px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
