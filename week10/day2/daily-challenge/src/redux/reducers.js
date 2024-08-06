@@ -5,11 +5,15 @@ const initialState = {};
 const taskReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TASK:
-            return {...state, [action.payload.day]: [...(state[action.payload.day] || []), action.payload.task]};
+            const dayTasks = state[action.payload?.day] ? [...state[action.payload?.day]] : []
+            dayTasks.push({id: dayTasks.length+1, task: action.payload.task})
+            return {...state, [action.payload?.day]: dayTasks};
         case EDIT_TASK:
-            return {...state, [action.payload.day]: state[action.payload.day].map((task, index) => index === action.payload.index ? action.payload.newTask : task)};   
+            console.log(action.payload);
+            const currentDay = state[action.payload.day]
+            return {...state, [action.payload.day]: currentDay.map((task) => task.id == action.payload.id ? {...task, task: action.payload.newTask} : task)};
         case REMOVE_TASK:
-            return {...state, [action.payload.day]: state[action.payload.day].filter((task, index) => index !== action.payload.index)};
+            return {...state, [action.payload.day]: state[action.payload.day].filter((task) => task.id !== action.payload.id)};
         default:
             return state;
     };

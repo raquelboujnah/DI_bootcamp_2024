@@ -6,25 +6,17 @@ const TodoItem = (props) => {
     
   return (
     <div>
-        <h4>{props.todo[0].text}</h4>
-        <span onClick={() => props.toogle(props.todo.index)}>{props.todo.complited}</span>
-        <button onClick={() => props.remove(props.todo.index)}>Delete</button>
+        <h4 onClick={() => props.toogle(props.todo.id)}>{props.todo.text} {props.todo.completed ? 'completed' : 'not completed'}</h4>
+        <button onClick={() => props.remove(props.todo.id)}>Delete</button>
     </div>
   );
 };
 
-
-const mapStateToProps = (state) => {
-    return {
-        todo: state.todoList.todos
-    };
-};
-
 const mapDispatchToProps = (dispatch) => {
     return{
-        remove: (index) => dispatch(removeTodo(index)),
-        toggle: (index) => dispatch(toogleTodo(index)),
+        remove: (id) => dispatch(removeTodo(id)),
+        toogle: (id) => dispatch(toogleTodo(id)),
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoItem);
+export default connect(undefined, mapDispatchToProps)(TodoItem);

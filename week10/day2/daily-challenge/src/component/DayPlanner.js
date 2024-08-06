@@ -1,62 +1,55 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import { add, edit, remove } from '../redux/actions';
 
 const DayPlanner = (props) => {
-    const [day, setDay] = useState('Monday');
-    const [task, setTask] = useState('');
-    const [editingTask, setEditingTask] = useState(null);
-    const [newTask, setNewTask] = useState('');
+    const [day, setDay] = useState('Sunday');
+    const addRef = useRef()
+    const editRef = useRef()
+    console.log(props);
+    
 
     const handleAddTask = () => {
-        if (task.trim()) {
-        props.addTask(day, task);
-        setTask('');
-        }
+        props.addTask(day, addRef.current.value);
     };
 
-    const handleEditTask = (index) => {
-        props.editTask(day, index, newTask);
-        setEditingTask(null);
-        setNewTask('');
+    const handleEditTask = (id) => {
+        props.editTask(day, id, editRef.current.value);
     };
 
-    const handleDeleteTask = (index) => {
-        props.removeTask(day, index);
+    const handleDeleteTask = (id) => {
+        props.removeTask(day, id);
     };
 
     return (
-        <div>
-        <h2>{day}</h2>
-        <input type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder="New Task"/>
-        <button onClick={handleAddTask}>Add Task</button>
-        <ul>
-            {props.tasks[day]?.map((task, index) => (
-                <li key={index}>
-                    {editingTask === index ? (
-                    <div>
-                        <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)}/>
-                        <button onClick={() => handleEditTask(index)}>Save</button>
+        <div>        
+            <select onChange={(e) => setDay(e.target.value)} value={day}>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+            <h2>{day}</h2>
+            <div>
+                <h5>Add a new task</h5>
+                <input type="text" ref={addRef} placeholder="New Task"/>
+                <button onClick={() => handleAddTask()}>Add Task</button>
+            </div>
+            {props.tasks[day]? props.tasks[day].map(task => {
+                return (
+                    <div key={task.id}>
+                        <h5>{task.task}</h5>
+                        <div>
+                            <input type="text" ref={editRef}/>
+                            <button onClick={() => handleEditTask(task.id)}>Save</button>
+                        </div>
+                        <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
                     </div>
-                    ) : (
-                    <div>
-                        {task}
-                        <button onClick={() => setEditingTask(index)}>Edit</button>
-                        <button onClick={() => handleDeleteTask(index)}>Delete</button>
-                    </div>
-                    )}
-                </li>
-            ))}
-        </ul>
-        <select onChange={(e) => setDay(e.target.value)} value={day}>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-        </select>
+                ) 
+            }) : null} 
         </div>
     );
 };
@@ -70,10 +63,11 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return{
         addTask: (day, task) => dispatch(add(day, task)),
-        editTask: (day, index, newTask) => dispatch(edit(day, index, newTask)),
-        removeTask: (day, index) => dispatch(remove(day, index))
+        editTask: (day, id, newTask) => dispatch(edit(day, id, newTask)),
+        removeTask: (day, id) => dispatch(remove(day, id))
     }
-    
 };
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(DayPlanner);

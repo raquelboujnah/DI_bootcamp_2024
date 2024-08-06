@@ -9,16 +9,16 @@ export const addTodo = (text) => {
     };
 };
 
-export const removeTodo = (index) => {
+export const removeTodo = (id) => {
     return{
         type: REMOVE_TODO,
-        payload: index
+        payload: id
     };
 };
 
-export const toogleTodo = (index) => {
+export const toogleTodo = (id) => {
     return{
         type: TOOGLE_TODO,
-        payload: index
+        payload: id
     };
 };

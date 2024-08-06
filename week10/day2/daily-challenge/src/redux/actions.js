@@ -9,16 +9,16 @@ export const add = (day, task) => {
     };
 };
 
-export const edit = (day, index, newTask) => {
+export const edit = (day, id, newTask) => {
     return{
         type: EDIT_TASK,
-        payload: {day, index, newTask}
+        payload: {day, id, newTask}
     };
 };
 
-export const remove = (day, index) => {
+export const remove = (day, id) => {
     return{
         type: REMOVE_TASK,
-        payload: {day, index}
+        payload: {day, id}
     };
 };

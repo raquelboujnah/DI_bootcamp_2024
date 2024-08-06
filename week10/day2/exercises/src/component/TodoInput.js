@@ -1,34 +1,20 @@
-import {addTodo} from '../redux/action'
-import { useState } from "react";
+import { addTodo } from '../redux/action'
+import { useRef } from "react";
 import { connect } from "react-redux";
 
 const TodoInput = (props) => {
-    const [text, setText] = useState('');
-  
+    const taskRef = useRef()
+
     const handleAddTodo = () => {
-      if (text.trim()) {
-        props.add(text);
-        setText('');
-      }
+      props.add(taskRef.current.value);
     };
   
     return (
       <div>
-        <input
-          type="text"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
+        <input type="text" ref={taskRef}/>
         <button onClick={handleAddTodo}>Add Todo</button>
       </div>
     );
-};
-
-
-const mapStateToProps = (state) => {
-    return {
-        todo: state.todoList.todos
-    };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -37,4 +23,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
   
-export default connect(mapStateToProps, mapDispatchToProps)(TodoInput);
+export default connect(undefined, mapDispatchToProps)(TodoInput);
