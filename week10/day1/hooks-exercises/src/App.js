@@ -42,52 +42,88 @@
 
 //exercise 3
 import './App.css';
-import {useReducer, useRef, createContext} from 'react'
+import {useReducer, useRef, createContext, useState} from 'react'
 import TaskList from './component/TaskList';
 
 export const TaskContext = createContext()
 
 export const initialState = {
-  task: [],
+  tasks: [],
+  filter: 'all'
 };
 
 export const addTask = 'add_task';
 export const removeTask = 'remove_task';
+export const editTask = 'remove_task';
+export const toggleTask = 'remove_task';
+export const filterTask = 'remove_task';
+
 
 export const taskReducer = (state, action) => {
-  if(action.type === addTask){
-    const newTask = [...state.task]
-    newTask.push({id: newTask.length + 1,name: action.payload, active: true});
-    return {...state, task: newTask}
-  }else if(action.type === removeTask){
-    const notDeletedTask = state.task.filter(item=> item.id !== action.id);
-    return {...state, task: notDeletedTask}
+  switch (action.type) {
+    case addTask:
+      return {
+        ...state,
+        tasks: [...state.tasks, { id: state.tasks.length + 1, name: action.payload, completed: false }],
+      };
+    case removeTask:
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.id !== action.id),
+      };
+    case editTask:
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload.id ? { ...task, name: action.payload.name } : task
+        ),
+      };
+    case toggleTask:
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload ? { ...task, completed: !task.completed } : task
+        ),
+      };
+    case filterTask:
+      return {
+        ...state,
+        filter: action.payload,
+      };
+    default:
+      return state;
   }
-  return state;
-}
+};
+
 function App() {
   const [state, dispatch] = useReducer(taskReducer, initialState)
-  const inpuRef = useRef()
+  const inputRef = useRef()
 
   const AddTask = () => {
-    const value = inpuRef.current.value;
+    const value = inputRef.current.value;
     dispatch({type: addTask, payload: value});
-    inpuRef.current.value = ''
-  }
+    inputRef.current.value = '';
+  };
+
+  const FilterTasks = (filter) => {
+    dispatch({type: filterTask, payload: filter});
+  };
 
   return (
-    <TaskContext.Provider value={{dispatch, state}}>
+    <TaskContext.Provider value={{ dispatch, state }}>
       <div className="App">
         <h1>Task Manager</h1>
-        <input placeholder='Add task...' ref={inpuRef}/>
-        <button onClick={()=>AddTask()}>Add</button>
+        <input placeholder="Add task..." ref={inputRef} />
+        <button onClick={AddTask}>Add</button>
         <div>
-          <TaskList/>
+          <button onClick={() => FilterTasks('all')}>All</button>
+          <button onClick={() => FilterTasks('completed')}>Completed</button>
+          <button onClick={() => FilterTasks('active')}>Active</button>
         </div>
+        <TaskList />
       </div>
     </TaskContext.Provider>
-    
   );
-}
+};
 
 export default App;

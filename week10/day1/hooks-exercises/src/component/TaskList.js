@@ -1,22 +1,23 @@
 import { useContext } from "react";
 import { TaskContext } from "../App";
-import TaskRemover from "./TaskRemover";
+import TaskItem from "./TaskItem";
 
 const TaskList = () => {
-    const {state} = useContext(TaskContext);
-    return (
-        <>
-            <h3>List of tasks</h3>
-            {
-                state.task.map((item, idx) => {
-                return <div key={idx}>
-                    {item.name}
-                    <TaskRemover id={item.id}/>
-                </div>;
-                })
-            }
-        </>
-    )
-}
+  const { state } = useContext(TaskContext);
+  const filteredTasks = state.tasks.filter((task) => {
+    if (state.filter === 'completed') return task.completed;
+    if (state.filter === 'active') return !task.completed;
+    return true;
+  });
 
-export default TaskList
+  return (
+    <>
+      <h3>List of tasks</h3>
+      {filteredTasks.map((task) => (
+        <TaskItem key={task.id} task={task} />
+      ))}
+    </>
+  );
+};
+
+export default TaskList;

@@ -1,12 +1,15 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initialState = {
-    users: [
-        { id: 1, name: "Jhon", email: "jjj@gmail.com" },
-        { id: 2, name: "Anne", email: "aaa@gmail.com" },
-        { id: 3, name: "Dan", email: "ddd@gmail.com" },
-    ]
+    users: [],
+    status: ''
 };
+
+export const initUsers = createAsyncThunk('users/fetch', async () => {
+    const result = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await result.json();
+    return data;
+});
 
 export const usersSlice = createSlice({
     name: 'users',
@@ -17,6 +20,9 @@ export const usersSlice = createSlice({
             console.log(state.users.payload);
             
         },
+        fetchUsers: (state, action) => {
+            state.users = action.payload
+        },
         addUserWithPrepare: {
             reducer(state, action){
                 state.users.push(action.payload)
@@ -25,9 +31,22 @@ export const usersSlice = createSlice({
                 return{payload: {id: nanoid(), name, email} }
             }
         }
+    },
+    extraReducers(builder) {
+        builder
+        .addCase(initUsers.pending, (state) => {
+            state.status = 'loading'
+        })
+        .addCase(initUsers.fulfilled, (state, action) => {
+            state.status = 'succeeded'
+            state.users = action.payload
+        })
+        .addCase(initUsers.rejected, (state) => {
+            state.status = 'failed'
+        })
     }
 });
 
-export const {displayUsers, addUser, addUserWithPrepare} = usersSlice.actions;
+export const {addUser, fetchUsers, addUserWithPrepare} = usersSlice.actions;
 
 export default usersSlice.reducer;

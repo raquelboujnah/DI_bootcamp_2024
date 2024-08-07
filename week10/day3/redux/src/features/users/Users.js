@@ -1,12 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useRef } from "react";
-import {addUser, addUserWithPrepare} from './usersSlice';
+import { useRef, useEffect } from "react";
+import {addUser, fetchUsers, addUserWithPrepare, initUsers} from './usersSlice';
 
 const Users = (props) => {
     const users = useSelector(state => state.usersReducer.users)
     const name = useRef();
     const email = useRef();  
     const dispatch = useDispatch();
+    const status = useSelector(state => state.usersReducer.status)
+
+    useEffect(() => { 
+        dispatch(initUsers())
+    }, [])
 
     const pushUser = () => {
         const nameInput = name.current.value
