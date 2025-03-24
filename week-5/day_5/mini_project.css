@@ -1,37 +1,58 @@
-#colorBar {
+*{
+    box-sizing: border-box;}
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
     display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    width: 100vw;
     height: 100vh;
-    width: 150px;
-    float: left;
-    background-color: darkgray;
+    border: 2px solid black;
+    background-color: gray;
+    border-radius: 10px;
+    grid-template-columns: 1fr 4fr;
     padding: 5px;
 }
-
-.color-box{
-    border: 1px solid black;
+.color-canvas{
+    display: grid;
+    grid-template-rows: 1fr 7fr;
+    padding: 0.5rem;
+    gap: 3px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+button{
     border-radius: 5px;
-    cursor: pointer;
-
+}
+.color-palette{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    padding: 5px;
+    gap: 5px;
+    min-width: 0;
+    min-height: 0;
+}
+.color-pallete > * {
+    border: 1px solid black;
+}
+.container *{
+    border: 1px solid black;
+}
+.color-canvas > *{
+    border: 1px solid black;
+}
+.drawing-canvas *{
+    border-color: darkgrey;
 }
 
-button {
-    grid-column: 1/ 4;
-    border-radius: 8px;
-    font-size: 20px;
-    cursor: pointer;
-
-}
-
-#board{
+.drawing-canvas{
+    background-color: white;
     display: grid;
     grid-template-columns: repeat(60, 1fr);
-    height: 100vh;
-}
+    grid-template-rows: repeat(60, 1fr);
+    min-width: 0;
+    min-height: 0;
 
-.box{
-    border: 1px solid lightgray;
-    height: 11.4px;
 }

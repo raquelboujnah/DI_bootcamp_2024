@@ -161,6 +161,7 @@ sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pa
 
 while "Pastrami sandwich" in sandwich_orders:
     sandwich_orders.remove( "Pastrami sandwich")
+    print(sandwich_orders)
 
 finished_sandwiches = []
 while sandwich_orders:
@@ -169,3 +170,9 @@ while sandwich_orders:
     
 for i in finished_sandwiches:
     print(f"I made your {i}")
+
+my_name='olga'
+user_name=input('please enter your name:')
+
+if my_name==user_name: print('cool, we have the same name')
+else: print('walla, you have a very unusual name')

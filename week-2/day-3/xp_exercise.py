@@ -135,5 +135,18 @@ disney_users_e = {}
 for index, name in enumerate(users):
     if name[0] in ("M", "P"):
         disney_users_e[name] = index
-        
-        
+
+
+
+family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
+price = 0
+for f in family:
+    if 3 <= family[f] <= 12:
+        price += 10
+        print(f"{f} needs to pay 10 nis.")    
+    elif family[f] > 12:
+        price += 15
+        print(f"{f} needs to pay 15 nis.")
+    else:
+        print(f"{f} doesn't need to pay.")
+print(f"Total price: {price} nis.")

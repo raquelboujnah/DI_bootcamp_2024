@@ -18,8 +18,8 @@ class Farm:
         return sentence
     
     def get_animal_types(self):
-        list_types = sorted(list(self.list_animal.keys()))
-        return list_types
+        return sorted(self.list_animal.keys())
+        return 
         
     def get_short_info(self):
         all_types = self.get_animal_types()
@@ -30,11 +30,21 @@ class Farm:
         print(f"{self.name}'s farm has {sentence_farm} and {all_types[2]}")
 
 
-macdonald = Farm("McDonald")
-macdonald.add_animal('cow', 5)
-macdonald.add_animal('sheep')
-macdonald.add_animal('sheep')
-macdonald.add_animal('goat', 12)
-print(macdonald.get_info())
-macdonald.get_animal_types()
-macdonald.get_short_info()
+# macdonald = Farm("McDonald")
+# macdonald.add_animal('cow', 5)
+# macdonald.add_animal('sheep')
+# macdonald.add_animal('sheep')
+# macdonald.add_animal('goat', 12)
+# print(macdonald.get_info())
+# print(macdonald.get_animal_types())
+# macdonald.get_short_info()
+sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
+sandwich_orders.remove("Pastrami sandwich")
+print(sandwich_orders)
+finished_sandwiches=[]
+while sandwich_orders:
+    sandwich_current=sandwich_orders.pop(0)
+    print(f"i made your {sandwich_current}")
+    finished_sandwiches.append(sandwich_current)
+
+print()

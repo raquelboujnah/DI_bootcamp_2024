@@ -75,3 +75,19 @@ main()
         
     
         
+encrypted_string_with_newline = '''7ii
+Tsx
+h%?
+i #
+sM 
+$a 
+#t%
+^r!
+'''
+
+encrypted_string = encrypted_string_with_newline.replace("\n", "")
+
+# just to remove the newline in the string
+
+print("This is the matrix string:")
+print (encrypted_string)

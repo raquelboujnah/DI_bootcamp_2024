@@ -43,5 +43,19 @@ else:
     items_list.sort()
     print(items_list)
     
-    
-    
+total_cost = 0
+num_people = int(input('How many people are in the family?'))
+for i in range(num_people):
+    age = int(input(f'Enter the age of person {i + 1}:'))
+    if age < 3:
+        print('Ticket is free')
+        ticket_price = 0
+    elif 3 <= age <= 12:
+        print('Ticket costs $10')
+        ticket_price = 10
+    else:
+        print('Ticket costs £15')
+        ticket_price = 15
+
+total_cost += ticket_price
+print(f'\nThe totalcost for the family ticket is: ${total_cost}')

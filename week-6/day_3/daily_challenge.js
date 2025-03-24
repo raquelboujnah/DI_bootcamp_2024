@@ -40,3 +40,6 @@ let videos = arr.map((item) => {
 videos.forEach(item => {
     console.log(item.watch);
 })
+
+
+10 אנשים תחתיו 2019-24 2021-24

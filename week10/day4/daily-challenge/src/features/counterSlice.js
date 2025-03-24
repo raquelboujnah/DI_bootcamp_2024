@@ -40,5 +40,6 @@ export const counterSlice = createSlice({
         .addCase(ageUpAsync.rejected, (state) => {
             state.status = 'failed'
         })
+        
     }
 })

@@ -1,0 +1,155 @@
+.App {
+  text-align: center;
+}
+
+
+#skills{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.post_it_container{
+  position: relative;
+}
+
+#post_it{
+  height: 150px;
+}
+
+.skill_item{
+  position: absolute;  
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-weight: 700;
+  font-size: 20px;
+  top: 50px;
+  left: 35px;
+  width: 90px;
+}
+
+#dog_img{
+  height: 150px;
+}
+
+#fitness_img{
+  height: 220px;
+  width: 230px;
+}
+
+#projects{
+  margin-top: 50px;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+#projects_container{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+
+}
+
+#one_project_container{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+  color: #6e3f22;
+}
+
+
+#two_project_container{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #3a6b35;
+  padding: 30px;
+  gap: 30px;
+}
+
+#tape{
+  position: absolute;
+  height: 170px;
+  bottom: 140px;
+  left: 100px;
+  transform: rotate(90deg);
+}
+Meryl et Michael
+C'est avec une immense reconnaissance envers Hm que nous avons l'honneur de vous inviter au mariage de Raquel et Ezra.
+
+Merci de nous faire part de votre réponse au plus vite.
+
+À très vite ! 🩷🩷🩷
+
+#dog_project{
+  border: 2px solid #6e3f22;
+  background-color: #fdfaf2;
+  width: 220px;
+  height: 200px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#project_item{
+  cursor: pointer;
+}
+
+#dog_project:hover, #project_item:hover{
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#paper{
+  position: absolute;
+  height: 260px;
+  width: 800px;
+  top: 3px;
+  right: -50px;
+}
+
+.text_project{
+  width: 70%;
+  text-align: start;
+  z-index: 1;
+}
+
+#fitness_title{
+  position: absolute;
+  font-size: 28px;
+  top: 85px;
+  left: 60px;
+  width: 30px;
+
+}
+
+#about_me{
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#photo{
+  height: 180px;
+  border-radius: 25%;
+}
+
+#frame{
+  position: absolute;
+  height: 260px;
+  bottom: -27px;
+  left: -60px;
+}

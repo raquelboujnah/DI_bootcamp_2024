@@ -165,40 +165,59 @@ star_wars = [
     }
 ]
 
-def question_user():
-    wrong_answer = 0
-    good_answer = 0
-    wrong_answer_list = []
-    print("--------The quiz starts--------")
-    for quiz in star_wars:
-        print(quiz["question"])
-        user_answer = input("what is your answer?\n")
-        if user_answer != quiz["answer"]:
-           wrong_answer += 1 
-           new_quiz = quiz.copy()
-           new_quiz["wrong_answer_user"] = user_answer
-           wrong_answer_list.append(new_quiz)
-        else:
-            good_answer += 1
+# def question_user():
+#     wrong_answer = 0
+#     good_answer = 0
+#     wrong_answer_list = []
+#     print("--------The quiz starts--------")
+#     for quiz in star_wars:
+#         print(quiz["question"])
+#         user_answer = input("what is your answer?\n")
+#         if user_answer != quiz["answer"]:
+#            wrong_answer += 1 
+#            new_quiz = quiz.copy()
+#            new_quiz["wrong_answer_user"] = user_answer
+#            wrong_answer_list.append(new_quiz)
+#         else:
+#             good_answer += 1
     
-    quiz_result(wrong_answer, good_answer, wrong_answer_list) 
+#     quiz_result(wrong_answer, good_answer, wrong_answer_list) 
 
 
-def quiz_result(wrong, good, list_):
-    print("\n-----------------------")
-    print(f"You have done {good} correct answer")
-    print(f"You have done {wrong} wrong answer")
-    for quest in list_:
-        print(f"In the question {quest['question']} your answer was {quest['wrong_answer_user']} but the correct answer was {quest['answer']}")
+# def quiz_result(wrong, good, list_):
+#     print("\n-----------------------")
+#     print(f"You have done {good} correct answer")
+#     print(f"You have done {wrong} wrong answer")
+#     for quest in list_:
+#         print(f"In the question {quest['question']} your answer was {quest['wrong_answer_user']} but the correct answer was {quest['answer']}")
         
-    print("\n-----------------------")
-    if wrong > 3:
-        print("You've done more that 3 mistakes try again to improve your knowleg in star wars")
-        question_user()
-    else:
-        print("Good job")
+#     print("\n-----------------------")
+#     if wrong > 3:
+#         print("You've done more that 3 mistakes try again to improve your knowleg in star wars")
+#         question_user()
+#     else:
+#         print("Good job")
 
-question_user()
+# question_user()
       
       
-        
+sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
+
+#The deli has run out of pastrami, use a while loop to remove all occurrences of “Pastrami sandwich” from sandwich_orders.
+#We need to prepare the orders of the clients:
+#Create an empty list called finished_sandwiches.
+#One by one, remove each sandwich from the sandwich_orders while adding them to the finished_sandwiches list.
+#After all the sandwiches have been made, print a message listing each sandwich that was made, such as:
+while "Pastrami sandwich" in sandwich_orders:
+    sandwich_orders.remove("Pastrami sandwich")
+#print(sandwich_orders)
+
+finished_sandwiches =[]
+
+while sandwich_orders:
+    current_sandwich = sandwich_orders.pop()
+    print("I made a " + current_sandwich)
+    finished_sandwiches.append(current_sandwich)
+print()
+for finished_sandwich in finished_sandwiches:
+    print(finished_sandwich.title() + " is done")

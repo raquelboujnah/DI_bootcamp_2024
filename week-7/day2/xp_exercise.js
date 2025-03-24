@@ -85,6 +85,24 @@ async function asyncCall() {
     console.log(result);
 }
 
-asyncCall();
+// asyncCall();
+let text = "How are you doing today?";
+const myArray = text.split(" ");
+console.log(myArray)
+
+const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
+
+// At position 2, add "Lemon" and "Kiwi"
+fruits1.splice(2,2);
+// fruits1.splice(2, "Lemon", "Kiwi");
+
+console.log(fruits1);
+
+
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const citrus = fruits.slice(2, 4);
+// console.log(citrus);
+
+
 // calling
 // resolved

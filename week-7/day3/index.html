@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,5 +19,37 @@
     </div>
     
     
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Watch Fetcher</title>
+    <link rel="stylesheet" href="mini_project.css">
+    <script src="mini_project.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class ="container">
+        <img id ="starwars" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Star_Wars_Logo..png" width="300">
+        <h1> Character Finder</h1><hr>
+        <button id = "fetch-character" >Get random Character</button>
+        <div id="character-info">
+            <p id="loading-message" class="hidden">
+                <i class="fas fa-spinner fa-spin"></i> Loading character...
+            </p>
+            <p id="error-message" class="hidden" >Error fetching Character.Please try again</p>
+            <div id = "character-details" class ="hidden">
+                <h2 id="character-name"> Name</h2>
+                <p><strong>Height:</strong> <span id="character-height"></span></p>
+                <p><strong>Gender:</strong> <span id="character-gender"></span></p>
+                <p><strong>Birth Year:</strong> <span id="character-birth"></span></p>
+                <p><strong>Home World:</strong> <span id="character-homeworld"></span></p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
