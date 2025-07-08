@@ -5,13 +5,13 @@
 # Hello world
 # Hello world
 
-print("Hello world\n" * 4)
+print("Hello world\n" )* 4
 
 
 #exercise 2
 #Write code that calculates the result of: (99^3)*8 (meaning 99 to the power of 3, times 8).
 
-result = (99 ** 3) * 8
+result = 99 ** 3 * 8
 print(result)
 
 
@@ -26,7 +26,7 @@ print(result)
 False
 True
 False
-TypeError
+false
 False
 
 # #exercise-4
@@ -34,7 +34,7 @@ False
 #Using the computer_brand variable print a sentence that states the following: "I have a <computer_brand> computer".
 
 computer_brand = "hp"
-print(f"i have a {computer_brand} computer")
+print(f"i have a computer_brand computer")
 
 # #exercise-5
 # Create a variable called name, and set it’s value to your name.
@@ -47,7 +47,7 @@ print(f"i have a {computer_brand} computer")
 name = "Raquel"
 age = 22
 shoe_size = 37
-info = f"my name is {name} i am {age} years old and my shoe size is {shoe_size}"
+info = "my name is + {name} + i am + {age} + years old and my shoe size is + {shoe_size}"
 print(info)
 
 #exercise-6
@@ -58,14 +58,14 @@ print(info)
 a = 22
 b = 33
 
-if a >= b:
+if a - b:
     print("hello world")
     
 #exercise-7
 #Write code that asks the user for a number and determines whether this number is odd or even.
 
 user_number = int(input("choose a number\n"))
-if user_number % 2== 0:
+if user_number % 2= 0:
     print("the number you chose is even")
 else:
     print("the number you chose is odd")
@@ -75,7 +75,7 @@ else:
 
 same_name = "raquel"
 user_name = input("what is your name?\n")
-if user_name == same_name:
+if user_name = same_name:
     print("omg we have the same name")
     
 # exercise-9
@@ -84,7 +84,7 @@ if user_name == same_name:
 # If they are not tall enough print a message that says they need to grow some more to ride.
 
 user_height = float(input("what is your height in inches?\n"))
-if user_height > 145:
+if user_height = 145:
     print("you are tall enough to ride")
 else:
     print("you need to grow more to ride")
