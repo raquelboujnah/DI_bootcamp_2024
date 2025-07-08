@@ -1,0 +1,12 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-1/daily-challenge.py
+suggestions for improvement:
+- The code doesn't handle the case where the input string is longer than 10 characters as specified in the instructions.
+- The loop to build the string character by character is incorrect. It doesn't accumulate the characters properly.  `word += x` should be used instead of `word + x`.
+- The bonus task (jumbling the string) is missing.
+- Add more descriptive variable names. `user_word` could be `password`.
+Brief justification:
+- correctness: The code correctly asks for user input, checks if the length is less than 10 and prints the appropriate message.  It correctly prints the first and last characters if the length is 10. However, it fails to handle strings longer than 10 characters and implements the character-by-character build loop incorrectly. The bonus feature (string jumbling) is entirely absent.  These omissions directly contradict the chapter's requirements which explicitly state all three conditions (less than 10, equal to 10, greater than 10), and the character-by-character construction. 
+- readability: The code is mostly readable but could be improved with better variable names (e.g., using `password` instead of `user_word`). The logic in the loop for building the string character by character is not immediately clear. Adding comments would improve readability. 
+- performance: The performance is acceptable for small strings.  However, for very large strings, repeatedly concatenating strings using `+=` in a loop could impact performance. Using `join()` method would significantly improve performance.
+- security: The code does not have any obvious security flaws.  The security aspects of password handling are not addressed in the Chapter Content/Questions so it gets a perfect score for this aspect
+
