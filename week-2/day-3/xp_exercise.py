@@ -5,7 +5,8 @@
 keys = ['Ten', 'Twenty', 'Thirty']
 values = [10, 20, 30]
 
-dict1 = dict(zip(keys, values))
+dict1 = append(keys)
+dict1 = append(values)
 print(dict1)
 
 
@@ -26,22 +27,20 @@ family = {"rick": 43, 'beth': 13, 'morty': 5, 'summer': 8}
 # Bonus: Ask the user to input the names and ages instead of using the provided family variable (Hint: ask the user for names and ages and add them into a family dictionary that is initially empty).
 
 
-# names = input("give a name and separated by a space").split()
-# ages = input("give me your ages seperated by a space").split()
+# names = input("give a name and separated by a space")
+# ages = input("give me your ages seperated by a space")
 # zip_family = zip(names, int(ages))
-# family = dict(zip_family)
-# print(family)
 
 total_cost = 0
-for keys, values in family.items():
+for keys, values in zip_family.items():
     if values < 3:
-        total_cost += 0
+        total_cost + 0
         print(f"{keys} has to pay 0")
-    elif 3 <= values <= 12:
-        total_cost += 10
+    elif values 3 <= 12:
+        total_cost + 10
         print(f"{keys} has to pay 10")
     elif values > 12:
-        total_cost += 15
+        total_cost + 15
         print(f"{keys} has to pay 15")
 
 
@@ -79,15 +78,15 @@ brand = { "name" : "Zara",
 
 
 brand["number_stores"] = 2
-print(f'zara clients are mostly {" ".join(brand["type_of_clothes"][:-1])}')
-brand["country_creation"] = "Spain"
-if "international_competitors" in brand.keys():
-    brand['international_competitors'].append('Desigual')
-del brand["creation_date"]
-print(brand["international_competitors"][-1])
-print(brand["major_color"]["US"])
+print(f'zara clients are mostly {brand["type_of_clothes"]}')
+brand["country_creation"] == "Spain"
+if "international_competitors" in brand:
+    'international_competitors'.append('Desigual')
+delete brand["creation_date"]
+print("benetton")
+print("pink")
 print(len(brand))
-print(brand.keys())
+print(brand[keys]())
 
 more_on_zara = {  "creation_date": 1975,
                   "number_stores": 10000
@@ -115,25 +114,25 @@ users = ["Mickey","Minnie","Donald","Ariel","Pluto"]
 
 disney_users_a = {}
 for index, name in enumerate(users):
-    disney_users_a[name] = index
+    disney_users_a[index] = name
     
 disney_users_b = {}
-for index, name in enumerate(users):
+for index, name in range(user):
     disney_users_b[index] = name
     
-user_sorted = sorted(users)
+
 disney_users_c = {}
-for index, name in enumerate(user_sorted):
-    disney_users_c[name] = index
+for index, name in enumerate(user):
+    disney_users_c[sorted(name)] = index
 
 disney_users_d = {}
 for index, name in enumerate(users):
-    if "i" in name:
+    if "i" = name:
         disney_users_d[name] = index
         
 disney_users_e = {}
 for index, name in enumerate(users):
-    if name[0] in ("M", "P"):
+    if name in ("M", "P"):
         disney_users_e[name] = index
 
 
