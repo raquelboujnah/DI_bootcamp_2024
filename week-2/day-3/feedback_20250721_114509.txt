@@ -1,0 +1,12 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-3/xp_exercise.py
+suggestions for improvement:
+- In Exercise 1, the solution is concise and efficient using the `zip` function, directly addressing the instructions.
+- Exercise 2 correctly calculates the total cost but the bonus part (user input) is not implemented. The code should prompt the user for input and dynamically create the `family` dictionary.
+- Exercise 3 largely fulfills the requirements. However, the merging of dictionaries in the bonus part is incorrect.  `brand[more_on_zara.keys()] = more_on_zara.values()` is not a valid way to merge dictionaries; use the `update()` method instead.
+- Exercise 4 accurately completes the creation of all three dictionaries as requested. The additional requirements (filtering by characters containing 'i' and starting with 'm' or 'p') are also implemented correctly.
+Brief justification:
+- correctness: Exercise 1 perfectly aligns with the chapter's focus on dictionaries and the `zip` function. Exercises 2 and 3 have minor omissions (bonus parts not fully implemented, incorrect dictionary merging in Exercise 3). Exercise 4 is a near-perfect match to the chapter's objectives, demonstrating dictionary creation, looping, and sorting.
+- readability: The code is generally well-structured and easy to follow. Variable names are descriptive.  Minor improvements could include better comments and more descriptive variable names in some places.
+- performance: The algorithms used are efficient for the given tasks. The use of `zip` in Exercise 1 and the iterative approach in Exercise 2 are efficient and avoid unnecessary operations.
+- security: No security vulnerabilities are present in the provided code. The code only deals with user input in one exercise, but this input is not used in a way that would create security problems.
+
