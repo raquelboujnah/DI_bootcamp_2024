@@ -1,0 +1,13 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-1/daily-challenge.py
+suggestions for improvement:
+- The code lacks error handling for non-string inputs.  It should check the input type.
+- The bonus task (shuffling the string) is missing.
+- Variable names could be more descriptive (e.g., `user_password` instead of `user_word`).
+- The security is severely lacking.  Never print a password to the console, especially in a real-world application.
+- Add comments to explain the purpose of different code sections.
+Brief justification:
+- correctness: The code correctly handles string length validation and prints the first and last characters as specified.  It also iteratively builds and prints the string character by character. However, it omits the bonus task of shuffling the string and lacks input validation (it assumes the input is a string).  Therefore, it does not fully implement all aspects of the chapter content, resulting in a score below 100%. The core functionality related to string length, first/last character extraction and iterative string building, directly addresses the chapter content on Python basics, conditionals, and loops.
+- readability: The code is relatively easy to understand.  The use of clear variable names and straightforward logic makes it readable. However, more descriptive names and comments would further enhance readability.
+- performance: The performance is efficient. The loop iterates through the string once, and the other operations have constant time complexity.  There's no unnecessary overhead.
+- security: The code has a major security flaw. It prints the entire user password to the console.  This is extremely risky and should never be done in a real-world application.  A score of 0 is justified because this is a critical security vulnerability that directly contradicts best practices.
+
