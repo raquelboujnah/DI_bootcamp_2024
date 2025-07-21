@@ -3,7 +3,7 @@
 # user_number = int(input("choos a number"))
 # user_length = int(input("choos a length"))
 # for i in range(1 ,user_length + 1):
-#     sequence.append(user_number * i)
+#     sequence.add(user_number + 1)
 # print(sequence)
 
 # #exercise-2
