@@ -1,0 +1,11 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-2/daily_challenge.py
+suggestions for improvement:
+- The first challenge (Multiples of a Number) is not correctly implemented.  The code attempts to use `sequence.add()`, but `sequence` is initialized as a list, not a set.  Lists don't have an `add()` method; they use `append()`.  Furthermore, the logic for calculating multiples is flawed. It should multiply the input number by the loop counter, not add 1 to the input number.
+- The second challenge (Remove Consecutive Duplicate Letters) is partially correct. It uses `dict.fromkeys()` which cleverly removes duplicate characters, but it doesn't handle consecutive duplicates specifically. It simply removes *all* duplicates, regardless of their position in the string. The chapter requires removal of *only* consecutive duplicates.
+- Improve the code style and add comments to improve readability. For example, using more descriptive variable names would enhance readability.
+Brief justification:
+- correctness: The code for Challenge 2 partially addresses the problem but does not correctly solve Challenge 1. Challenge 1 requires generating a list of multiples, which the code fails to do correctly.  Challenge 2's solution removes all duplicates, not just consecutive ones, as the instructions specify. Therefore, the correctness score is significantly reduced.
+- readability: The code is somewhat readable, but it could be improved with more descriptive variable names and comments explaining the logic, especially the less intuitive parts.  The use of  `dict.fromkeys()` in the second challenge is concise but might not be immediately obvious to someone unfamiliar with this technique.
+- performance: The performance of both solutions is generally good for the small inputs expected. The `dict.fromkeys()` approach in Challenge 2 is efficient for removing duplicates. The time complexity for both solutions is largely linear, making it suitable for the given problem size.
+- security: No security vulnerabilities are present in the provided code. It only takes user input and performs string manipulations, which does not pose any security threats.
+
