@@ -1,0 +1,12 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-2/daily_challenge.py
+suggestions for improvement:
+- The solution to Challenge 1 is correct and aligns with the chapter content on loops, lists, and input/output. However, it lacks error handling for non-integer inputs.
+- The solution to Challenge 2 is incorrect. It removes *all* duplicate letters, not just consecutive ones, as specified in the instructions.  The chapter mentions string manipulation, loops, and conditionals, which are relevant, but the solution doesn't use loops or conditionals in the way the challenge requests.
+- Improve code style by using more descriptive variable names. For example, instead of `user_number` use `number`.
+- Add comments to explain the purpose of each section of code.
+Brief justification:
+- correctness: Challenge 1's solution correctly uses a loop to generate a list of multiples, fulfilling the requirements of using loops and lists.  However, Challenge 2's solution uses `dict.fromkeys` which directly removes all duplicates without considering consecutiveness, failing to meet the challenge requirement. Therefore, only 50% correctness is given for addressing only half of the challenges correctly.
+- readability: The code for Challenge 1 is relatively readable, but Challenge 2's is less so because the use of `dict.fromkeys` is a concise but not entirely intuitive approach for removing consecutive duplicates.  More descriptive variable names would improve overall readability.
+- performance: Both solutions are efficient. Challenge 1 uses a single loop, and Challenge 2 leverages the efficient `dict.fromkeys` method. The performance of Challenge 2 could be significantly improved if it were implemented correctly using a loop and conditional statements. 
+- security: The code does not have any apparent security vulnerabilities. It only uses standard input/output functions and does not interact with external resources or handle user-supplied data in a way that could introduce security risks.
+

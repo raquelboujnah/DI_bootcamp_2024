@@ -1,0 +1,14 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-2/xp-exercise.py
+suggestions for improvement:
+- In Exercise 1, the approach of converting the set to a list, popping an element, and converting back to a set is inefficient and unclear.  Directly removing an element from a set using `remove()` or `discard()` would be more appropriate and readable. The `pop()` method is not designed for sets; it's meant for lists.
+- In Exercise 6, the code is incomplete. It should use a `while` loop to repeatedly prompt the user for their name until the correct name is entered.
+- Exercise 7 is incomplete. The code doesn't include the core logic to check if the entered fruit is present in the list and print the appropriate message.
+- Exercise 8 is missing the calculation and display of the total pizza cost.
+- Exercise 9 is incomplete. It only handles the first part (calculating the total cost). The bonus part about age restrictions is not implemented.
+- Avoid unnecessary comments like those in exercise 2 and exercise 4, especially when the comments don't add meaning or explanation
+Brief justification:
+- correctness: The code attempts to address most exercises, but several are incomplete or use inefficient methods. For example, Exercise 1 uses an unnecessarily complicated approach to remove an element from a set.  The incompleteness of exercises 6,7,8, and 9 significantly reduces the correctness score, indicating many aspects aren't fully aligned with the chapter's requirements. However, it attempts to address the core concept discussed in the chapter.
+- readability: The code is generally understandable, but some parts, like the set manipulation in Exercise 1, are not intuitive and could be improved by using more appropriate set operations. The addition of comments would improve the code readability overall, but avoid unnecessary ones.
+- performance: The performance is good for most of the exercises, but certain aspects, such as the unnecessary conversions between sets and lists in Exercise 1, impact the efficiency. Otherwise, algorithms used are efficient and relatively simple.
+- security: There are no apparent security vulnerabilities in the provided code.  It does not interact with external resources in a way that could introduce security risks.
+
