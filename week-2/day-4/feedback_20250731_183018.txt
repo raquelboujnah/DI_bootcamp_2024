@@ -1,0 +1,13 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-4/daily_challenge.py
+suggestions for improvement:
+- The code doesn't correctly handle the replacement of symbol groups with single spaces between alpha characters.  It inserts a space for every non-alpha character, not just between sequences of non-alpha characters.
+- The variable names could be more descriptive (e.g., `secret_matrix` instead of `secret`).
+- Add comments explaining the logic within the loops, especially the conditional statements for handling alpha and non-alpha characters.
+- The `create_columns` function could be improved by handling cases where rows have different lengths.  Currently it will throw an error if rows have varying numbers of characters.
+- Consider using more Pythonic ways to process the matrix such as list comprehension for improved readability.
+Brief justification:
+- correctness: The code successfully transforms the input string into a 2D list representing the matrix and iterates through its columns, extracting alphabetic characters. However, it fails to correctly implement step 4, replacing sequences of non-alphabetic characters with a single space.  It inserts spaces for each non-alpha character individually instead of consolidating them. The core logic for column-wise processing and alphabetic character filtering is present, hence the 70% score.
+- readability: The code is relatively easy to follow, with clear function definitions. However, more descriptive variable names and comments would enhance readability. The nested loop structure is understandable but could be improved with more comments to explain each step.
+- performance: The performance is good for the given input size.  The use of list comprehensions in `create_columns` contributes to efficiency.  For larger matrices, optimized algorithms might be necessary, but for this small input it's acceptable.
+- security: There are no security concerns in this code. It only manipulates strings and lists, performing no external operations or accessing sensitive data.
+
