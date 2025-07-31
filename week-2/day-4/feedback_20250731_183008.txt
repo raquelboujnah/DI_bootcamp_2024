@@ -1,0 +1,15 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-4/xp_exercise.py
+suggestions for improvement:
+- In `describe_city`, the parameter `contry` should be `country` for better readability and consistency.
+- In `number`, improve user input validation to ensure the input is indeed an integer between 1 and 100. Handle non-numeric input gracefully.
+- The `make_shirt` function could benefit from more descriptive variable names. For example, instead of `size`, use `shirt_size` and instead of `text`, use `message`.
+- In exercise 6, the `make_great` function modifies the original list in place.  While this fulfills the requirements, it's generally better practice to create a new list with the modified names to avoid unintended side effects. Consider returning the modified list instead of directly altering the original `magician_names`.
+- In exercise 7, the season input validation should be strengthened to handle non-numeric or out-of-range inputs. Add error handling.
+- Exercise 8 is incomplete.  The functions `question_user` and `quiz_result` are commented out.  The code needs to be completed to fulfill the exercise requirements fully.
+- The code for exercises 1-7 is functional and solves the stated problems for the most part.  However, a significant amount of improvements in terms of readability and error handling are needed.
+Brief justification:
+- correctness: The code largely addresses the exercises as defined in the chapter content.  Most functions are correctly defined and called; however, exercise 8 is not completed and some functions in other exercises lack robust error handling and input validation, which is why the score is not 100%.
+- readability: The code is generally readable, but there are inconsistencies (like typos) and opportunities to improve naming conventions for better clarity.  Adding comments explaining complex logic would further enhance readability. The exercises are somewhat separated, so readability could be improved.
+- performance: The code's performance is acceptable for these small-scale exercises.  However, input validation in some exercises could impact performance if large or invalid inputs are provided. Optimization is not a major issue at this scale, so a 90 is appropriate.
+- security: No significant security vulnerabilities are present in the code.  The code only interacts with user input and does not handle external files or network connections; therefore, there are no security concerns.
+
