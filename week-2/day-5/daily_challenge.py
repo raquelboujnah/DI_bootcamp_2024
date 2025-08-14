@@ -8,9 +8,9 @@ reverse()
 
 #challenge 2
 
-# def longuest():
-#     sentence = input('write a sentence ')
-#     lst_sentence = sentence.split()
-#     longuest_word = max(lst_sentence, key=len)
-#     print(longuest_word)   
-# longuest()
+def longuest():
+    sentence = input('write a sentence ')
+    lst_sentence = sentence.split()
+    longuest_word = max(lst_sentence, key=len)
+    print(longuest_word)   
+longuest()
