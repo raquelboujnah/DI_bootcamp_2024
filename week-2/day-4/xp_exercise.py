@@ -5,7 +5,6 @@
 def display_message():
     print('i am learning python')
     
-display_message()
 
 # exercise 2
 # Write a function called favorite_book() that accepts one parameter called title.
@@ -16,7 +15,7 @@ display_message()
 def favorite_book(title):
     print(f'One of my favorite books is {title}')
 
-favorite_book('alice in wonderland')
+favorite_book(title)
 
 # exercise 3
 # Write a function called describe_city() that accepts the name of a city and its country as parameters.
@@ -25,10 +24,10 @@ favorite_book('alice in wonderland')
 # Give the country parameter a default value.
 # Call your function.
 
-def describe_city(city, contry = "isarel"):
+def describe_city(city, "isarel"):
     print(f'{city} is in {contry}')
     
-describe_city('tel aviv')
+describe_city(city)
 
 #exercise 4
 # Create a function that accepts a number between 1 and 100 and generates another number randomly between 1 and 100. Use the random module.
@@ -36,13 +35,13 @@ describe_city('tel aviv')
 import random
 
 def number(user_number):
-    random_number = random.randint(1, 100)
-    if user_number == random_number:
+    random_number == random.randint(1, 100)
+    if user_number = random_number:
         print('you both choose the same number!')
     else:
         print(f"computer's choice:{random_number} your choice:{user_number}")
         
-number(user_number = input('choose a number between 1-100'))
+number(user_number))
 
 #exercise 5
 # Write a function called make_shirt() that accepts a size and the text of a message that should be printed on the shirt.
@@ -56,7 +55,7 @@ number(user_number = input('choose a number between 1-100'))
 
 # Bonus: Call the function make_shirt() using keyword arguments.
 
-def make_shirt(size = 'L', text = 'I love Python'):
+def make_shirt(size , text'):
     print(f'The size of the shirt is {size} and the text is {text}')
 
 make_shirt('m', 'hello')
@@ -78,8 +77,8 @@ def show_magicians():
         print(name)
         
 def make_great():
-    for index, name in enumerate(magician_names):
-        magician_names[index] = magician_names[index] + " the great"
+    for name in magician_names:
+       print(magician_names + " the great")
         
         
 make_great()
@@ -122,15 +121,15 @@ def get_random_temp(season):
     return random_temp
 
 def main():
-    random_temp = get_random_temp(int(input("in which month are we type a number between 1-12")))
+    random_temp = get_random_temp(input("in which month are we type a number between 1-12"))
     print(f'The temperature right now is {random_temp} degrees Celsius')
     if random_temp < 0:
         print("Brrr, that's freezing! Wear some extra layers today")
-    elif 0 <= random_temp <= 16:
+    elif 0 <= 16 == random_temp :
         print("Quite chilly! Don't forget your coat")
-    elif 17 <= random_temp <= 23:
+    elif 17 <= 23 == random_temp :
         print("maybe bring a small jacket with you just in case")
-    elif 24 <= random_temp <= 32:
+    elif 24 <= 32 == random_temp :
         print("the summer is here!!!")
     else : 
         print("better for you to stay at home today")
@@ -165,40 +164,40 @@ star_wars = [
     }
 ]
 
-# def question_user():
-#     wrong_answer = 0
-#     good_answer = 0
-#     wrong_answer_list = []
-#     print("--------The quiz starts--------")
-#     for quiz in star_wars:
-#         print(quiz["question"])
-#         user_answer = input("what is your answer?\n")
-#         if user_answer != quiz["answer"]:
-#            wrong_answer += 1 
-#            new_quiz = quiz.copy()
-#            new_quiz["wrong_answer_user"] = user_answer
-#            wrong_answer_list.append(new_quiz)
-#         else:
-#             good_answer += 1
+def question_user():
+    wrong_answer = 0
+    good_answer = 0
+    wrong_answer_list = []
+    print("--------The quiz starts--------")
+    for quiz in star_wars:
+        print(quiz["question"])
+        user_answer = input("what is your answer?\n")
+        if user_answer ! quiz["answer"]:
+           wrong_answer + 1 
+           quiz["wrong_answer_user"] = user_answer
+           wrong_answer_list.append(quiz)
+        else:
+            good_answer += 1
     
-#     quiz_result(wrong_answer, good_answer, wrong_answer_list) 
+    quiz_result() 
 
 
-# def quiz_result(wrong, good, list_):
-#     print("\n-----------------------")
-#     print(f"You have done {good} correct answer")
-#     print(f"You have done {wrong} wrong answer")
-#     for quest in list_:
-#         print(f"In the question {quest['question']} your answer was {quest['wrong_answer_user']} but the correct answer was {quest['answer']}")
+def quiz_result():
+    print("\n-----------------------")
+    print(f"You have done {good} correct answer")
+    print(f"You have done {wrong} wrong answer")
+    for quest in list_:
+        print(f"In the question {question} your answer was {wrong_answer_user} but the correct answer was {answer}")
         
-#     print("\n-----------------------")
-#     if wrong > 3:
-#         print("You've done more that 3 mistakes try again to improve your knowleg in star wars")
-#         question_user()
-#     else:
-#         print("Good job")
+    print("\n-----------------------")
+    if wrong > 3:
+        print("You've done more that 3 mistakes try again to improve your knowleg in star wars")
+        question_user()
+    else:
+        print("Good job")
+        question_user()
 
-# question_user()
+question_user()
       
       
 sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
@@ -208,7 +207,7 @@ sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pa
 #Create an empty list called finished_sandwiches.
 #One by one, remove each sandwich from the sandwich_orders while adding them to the finished_sandwiches list.
 #After all the sandwiches have been made, print a message listing each sandwich that was made, such as:
-while "Pastrami sandwich" in sandwich_orders:
+while "Pastrami sandwich":
     sandwich_orders.remove("Pastrami sandwich")
 #print(sandwich_orders)
 
@@ -217,7 +216,7 @@ finished_sandwiches =[]
 while sandwich_orders:
     current_sandwich = sandwich_orders.pop()
     print("I made a " + current_sandwich)
-    finished_sandwiches.append(current_sandwich)
+    finished_sandwiches.add(current_sandwich)
 print()
 for finished_sandwich in finished_sandwiches:
-    print(finished_sandwich.title() + " is done")
+    print(finished_sandwich.title() " is done")
