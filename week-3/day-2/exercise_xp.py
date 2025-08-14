@@ -80,77 +80,59 @@ dog2.fight(dog3)
 # Create a new python file and import your Dog class from the previous exercise.
 
 #exercise 4
-# Create a class called Family and implement the following attributes:
-# members: list of dictionaries
-# last_name : (string)
-# Implement the following methods:
-# born: adds a child to the members list (use **kwargs), don’t forget to print a message congratulating the family.
-# is_18: takes the name of a family member as a parameter and returns True if they are over 18 and False if not.
-# family_presentation: a method that prints the family’s last name and all the members’ details.
-# Create an instance of the Family class, with the last name of your choice, and the below members. Then call all the methods you created in Point 2.
+# Step 1: Person Class
+class Person:
+    def __init__(self, first_name, age):
+        self.first_name = first_name
+        self.age = age
+        self.last_name = ""  # Will be set later by the Family class
 
+    def is_18(self):
+        return self.age >= 18
+
+
+# Step 2: Family Class
 class Family:
     def __init__(self, last_name):
-        self.member = [{'name':'Michael','age':35,'gender':'Male','is_child':False},
-                        {'name':'Sarah','age':32,'gender':'Female','is_child':False}]
         self.last_name = last_name
-        
-    def born(self, **child):
-        self.member.append(child)
-        print("Congrats!!")
-        print(self.member)
-        
-    def is_18(self, name):
-        for memb in self.member:
-            if memb['name'] == name and memb['age'] >= 18 :
-                return True
-            else:
-                return False
-            
+        self.members = []
+
+    def born(self, first_name, age):
+        new_person = Person(first_name, age)
+        new_person.last_name = self.last_name  # Assign family last name
+        self.members.append(new_person)
+
+    def check_majority(self, first_name):
+        # Search for person with this first name
+        for member in self.members:
+            if member.first_name == first_name:
+                if member.is_18():
+                    print(f"You are over 18, your parents Jane and John accept that you will go out with your friends.")
+                else:
+                    print("Sorry, you are not allowed to go out with your friends.")
+                return
+        print(f"No member named {first_name} found in the family.")
+
     def family_presentation(self):
-        print(f'the family {self.last_name}:')
-        for memb in self.member:
-            for key, value in memb.items():
-                print(f'{key}: {value}')
-            
-            
-family_1 = Family("Boujnah")
-family_1.born(name = 'Marie', age = 0, gender = 'Female', is_child  = True)
-family_1.family_presentation()
-        
+        print(f"Family last name: {self.last_name}")
+        print("Members:")
+        for member in self.members:
+            print(f" - {member.first_name} {member.last_name}, {member.age} years old")
 
-#exercise 5
-# Create a class called TheIncredibles. This class should inherit from the Family class:
-# This is no random family they are an incredible family, therefore the members attributes, will be a list of dictionaries containing the additional keys : power and incredible_name. (See Point 4)
-# Add a method called use_power, this method should print the power of a member only if they are over 18 years old. If not raise an exception (look up exceptions) which stated they are not over 18 years old.
-# Add a method called incredible_presentation which :
-# Print a sentence like “*Here is our powerful family **”
-# Prints the family’s last name and all the members’ details (ie. use the super() function, to call the family_presentation method)
-# Create an instance of the Incredibles class, with the “Incredibles” last name, and the below members.
-# Call the incredible_presentation method.
-# Use the born method inherited from the Family class to add Baby Jack with the following power: “Unknown Power”.
-# Call the incredible_presentation method again.
 
-class TheIncredibles(Family):
-    def __init__(self, last_name):
-        super().__init__(last_name)
-        self.member = [
-        {'name':'Michael','age':35,'gender':'Male','is_child':False,'power': 'fly','incredible_name':'MikeFly'},
-        {'name':'Sarah','age':32,'gender':'Female','is_child':False,'power': 'read minds','incredible_name':'SuperWoman'}
-    ]
-        
-    def use_power(self, name):
-        for memb in self.member:
-            if memb['name'] == name and memb['age'] >= 18:
-                print(memb['power'])
-            else:
-                raise Exception('you are not over 18 years old.')
-            
-    def incredible_presentation(self):
-        print(f'Here is our powerful family: {self.last_name}')
-        self.family_presentation()
-        
-family_2 = TheIncredibles('Incredible')
-family_2.incredible_presentation()
-family_2.born(name ='jack', age = 0, gender = 'Male', is_child = True, power = 'Unknow Power', incredible_name = 'BabyJack')
-family_2.incredible_presentation()
+# ----------- TESTING THE CLASSES -----------
+
+# Create a family
+my_family = Family("Smith")
+
+# Add members
+my_family.born("Alice", 20)
+my_family.born("Bob", 16)
+
+# Check majority
+my_family.check_majority("Alice")  # Should allow going out
+my_family.check_majority("Bob")    # Should not allow
+my_family.check_majority("Eve")    # Not in family
+
+# Present the family
+my_family.family_presentation()
