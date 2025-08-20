@@ -1,0 +1,17 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-2/exercise_xp.py
+suggestions for improvement:
+- **Exercise 2: Dogs - `fight()` method:** Modify the `fight()` method to return a string instead of printing it directly. This aligns with standard method design where a method calculates and returns a result, letting the caller decide how to use it (e.g., print).
+- **Exercise 2: Dogs - `fight()` method:** Correct the logic for determining the winner. The instruction specifies `run_speed * weight`, but your current implementation only compares `run_speed()`. You should calculate `self.run_speed() * self.weight` for `self` and `other_dog.run_speed() * other_dog.weight` for the other dog, then compare these products.
+- **Exercise 2: Dogs - Testing:** Ensure all specified methods (`bark()`, `run_speed()`, and `fight()`) are explicitly tested, including printing the result of `run_speed()` as shown in the conceptual example.
+- **Exercise 3: Dogs Domesticated:** The code for this entire exercise is missing from the provided snippet. Please implement the `PetDog` class, its `__init__` with `trained` attribute, `train()`, `play(*args)`, and `do_a_trick()` methods as per the instructions, along with test cases.
+- **Exercise 4: Family and Person Classes - `family_presentation()`:** While minor, the `family_presentation()` method prints the `last_name` for each member in addition to their `first_name` and `age`. The instruction only asked for `first_name` and `age`. You can adjust this to strictly adhere to the prompt, though the current output is not functionally incorrect.
+Brief justification:
+- correctness: The code for Exercise 1 is fully correct, implementing inheritance, object instantiation, and method calls as described (100%).
+For Exercise 2, the `Dog` class and its basic methods are well-defined. However, the `fight()` method incorrectly implements the winning condition (comparing `run_speed()` instead of `run_speed() * weight`) and prints the result instead of returning it as instructed. Additionally, `run_speed()` is not explicitly tested by printing its output (70%).
+Exercise 3 is completely absent from the provided code snippet, leading to a 0% score for this section as no functionality is implemented.
+For Exercise 4, the `Person` and `Family` classes are largely correct and follow all requirements, including attributes, methods, and specific print statements. The only minor deviation is printing the member's `last_name` in `family_presentation()` when only `first_name` and `age` were explicitly requested (95%).
+Overall correctness is an average of these individual exercise scores.
+- readability: The code is generally very readable. Variable, class, and method names are clear and descriptive. The comments outlining each exercise are helpful. The structure of classes and methods follows standard Python conventions, making the code easy to understand and follow.
+- performance: The provided code implements basic object-oriented concepts with small data sets (e.g., a few cat or dog instances, a small family). There are no complex algorithms, large data structures, or intensive computations that would lead to performance concerns. The operations are simple and execute very quickly.
+- security: The code operates entirely within a self-contained environment. It does not handle external input, interact with files, databases, networks, or any sensitive information. Therefore, there are no inherent security vulnerabilities or concerns in the provided code.
+
