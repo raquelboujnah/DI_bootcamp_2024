@@ -1,0 +1,29 @@
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-5/anagrams.py
+suggestions for improvement:
+- Refine the `anylise_word` function (and fix its typo to `analyse_word` or `validate_word`): This function currently has logical flaws. Instead of `user_word.replace(" ", "")`, ensure that you first strip leading/trailing whitespace (`word.strip()`) and then check for multiple words using `word.split()` and for alphabetic characters using `word.isalpha()`. It should return a clear boolean `True`/`False` and optionally a message, rather than implicitly returning `None` or raising a generic `Exception`.
+- Implement whitespace stripping (`strip()` method) on user input explicitly: The requirements state 'Whitespace should be removed from the start and end of the user’s input.' This is currently not done. Apply `.strip()` to the user's input before any validation or processing, e.g., `user_word = show_menu().strip().upper()` or `stripped_word = show_menu().strip().upper()`.
+- Correct the method name call for validation: The `AnagramChecker` class requires an `is_valid_word(word)` method, but your code calls `text.is_a_valid_word(user_word)`. This is a mismatch and will cause an `AttributeError`.
+- Avoid redundant `get_anagrams` calls: The `text.get_anagrams(user_word)` method is called twice consecutively. Call it once and store the result in a variable (e.g., `anagrams = text.get_anagrams(stripped_word)`), then use that variable in the `print` statement.
+- Improve error handling: The `except:` block is too broad and catches all exceptions, which is bad practice as it can mask important errors. Replace it with more specific exception handling. Additionally, remove the `user_word = show_menu().upper()` line from the `except` block; let the main `while` loop handle subsequent prompts after an error message.
+- Ensure exact adherence to output formatting: The problem explicitly provides an example output format (e.g., `YOUR WORD :"MEAT"`). Pay attention to capitalization, punctuation, and spacing to match this format precisely. Consider storing the original case of the word for display if the example output requires it.
+- Use a more descriptive variable name for the `AnagramChecker` instance: `text` is not very descriptive; consider names like `checker` or `anagram_checker_instance` for better readability.
+- Verify the word list file name: The instruction mentions downloading `sowpods.zip` (which contains `sowpods.txt`). Ensure that `'words_file.txt'` in `AnagramChecker('words_file.txt')` correctly points to your extracted word list file.
+Correctness: 35%
+-----
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-5/anagram_checker.py
+suggestions for improvement:
+- **Correctness & Readability:** Implement the `is_anagram(word1, word2)` helper method as suggested in the hint. This method should compare if two words are anagrams (e.g., by sorting their characters and comparing the sorted strings).
+- **Correctness & Performance:** Refactor the `get_anagrams` method to use the `is_anagram` helper efficiently. Instead of generating all permutations (which has factorial time complexity and is highly inefficient for longer words), consider pre-processing the `self.text` dictionary. A common approach is to create a dictionary in `__init__` where keys are the 'canonical form' (e.g., sorted letters) of words, and values are lists of words sharing that canonical form. Then `get_anagrams` can simply sort the input word and look up its canonical form in this pre-processed dictionary.
+- **Correctness:** Address case sensitivity. The `sowpods.txt` file typically contains uppercase words. For robust checks, convert both the input word and the words loaded from the dictionary to a consistent case (e.g., `.upper()` or `.lower()`) before performing comparisons in `is_valid_word` and `get_anagrams`.
+- **Correctness & Readability:** Fix the bug where the code modifies `permutations` while iterating over it (`for perm in permutations: if perm == word: permutations.remove(perm)`). This can lead to unexpected behavior and missed elements. Instead, filter the list after generation using a list comprehension or a new list, e.g., `filtered_permutations = [p for p in permutations if p != word]`. Also, the instruction states 'not in the same order', so removing the original word is correct.
+- **Correctness:** Rename the `is_a_valid_word` method to `is_valid_word` to match the exact method signature specified in the instructions.
+- **Readability:** Simplify the `is_a_valid_word` method. The `if big_word in self.text: return True else: return False` can be concisely written as `return word.upper() in self.text_set` (assuming `self.text_set` for performance and uppercase handling).
+- **Performance:** In `__init__`, convert `self.text` (the list of words from the file) into a `set` (e.g., `self.text_set = set(word.strip().upper() for word in word_file)`). Using a `set` allows for O(1) average time complexity for word lookups (`in` operator) in `is_valid_word` and `get_anagrams`, significantly improving performance compared to O(N) list lookups.
+- **Readability:** Add meaningful comments to explain the logic of more complex sections of the code, especially within `get_anagrams`, rather than just repeating the problem description.
+Correctness: 50%
+-----
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-5/words_file.txt
+suggestions for improvement:
+- Checker failed to provide a response.
+Correctness: N/A%
+-----
