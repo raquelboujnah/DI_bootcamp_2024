@@ -1,0 +1,27 @@
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-3/xp_exercise.py
+suggestions for improvement:
+- **Exercise 1: Currencies**
+- Modify the `__add__` method to explicitly `raise TypeError` when currency labels do not match, instead of just creating the exception object.
+- Improve the type checking in `__add__` and `__iadd__` by using `isinstance()` checks instead of broad `try-except` blocks. This makes the logic clearer and handles different types more robustly.
+- Ensure `__repr__` provides an unambiguous representation, ideally one that could recreate the object (e.g., `Currency('dollar', 5)`), rather than a user-friendly string, as per standard Python practice for `__repr__` vs `__str__`. If the intention was for `repr(c1)` to produce `'5 dollars'`, then the instruction conflicts with `__repr__`'s typical use, and `__str__` would typically be for user-friendly output.
+- Implement currency type checking within `__iadd__` to raise a `TypeError` if two different currency types are added (e.g., 'dollar' += 'shekel').
+- Consider adding logic to `__str__` for pluralization (e.g., 'dollar' vs 'dollars') if `amount` is 1 or greater than 1, although the examples imply 'dollars' for any amount.
+- **Exercise 4: Current Date**
+- For strictly displaying 'the current date', consider using `datetime.now().date()` or `datetime.today().date()` to ensure only the date part is shown, as `datetime.today()` includes the time component.
+- **Exercise 5: Amount of time left until January 1st**
+- Correct the calculation of `hours` and `minutes` from the `timedelta` object. `time_difference.seconds` only provides the seconds within the current day's time portion. Use `time_difference.total_seconds()` and then derive hours and minutes, or directly access `time_difference.days`, `time_difference.seconds` to get remaining seconds, then calculate `hours` and `minutes` from those remaining seconds for display (e.g., `divmod`).
+- **Exercise 6: Birthday and minutes**
+- Completely revise the logic for calculating minutes lived. The current approach is approximate and incorrect. Instead, create `datetime` objects for the birthdate and the current time, subtract them to get a `timedelta`, and then use `timedelta.total_seconds() / 60` to get the exact number of minutes.
+- **Exercise 7: Faker Module**
+- Modify the `new_user` function to accept the number of users as an argument and generate them within the function, returning the list, as specified in the instructions. This makes the function more reusable and avoids relying on a global list.
+- Change the dictionary key from `language` to `language_code` to match the specific instruction `language_code: faker.language_code()`.
+- **General Improvements**
+- Add docstrings to classes and functions to explain their purpose, arguments, and return values. This greatly enhances readability and maintainability.
+- Add comments for complex or non-obvious logic, especially for dunder methods and time calculations.
+Correctness: 60%
+-----
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-3/func.py
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
