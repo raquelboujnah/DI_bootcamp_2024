@@ -1,0 +1,33 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-4/daily_challenge.py
+suggestions for improvement:
+- **Implement Missing Functionality (High Priority):**
+    *   **Part II: `from_file` Class Method:** Implement the `from_file(file_path)` class method within the `Text` class. This method should open the file, read its content, and return a new `Text` instance initialized with that content, as specified in Step 5.
+    *   **Bonus: `TextModification` Class:** Create the `TextModification` class that inherits from `Text` (Step 6).
+    *   **Bonus: Text Cleaning Methods:** Implement `remove_punctuation()` (Step 7), `remove_stop_words()` (Step 8), and `remove_special_characters()` (Step 9) within the `TextModification` class. Make sure to use the `string` module and regular expressions where specified.
+- **Adhere to Method Naming Conventions (High Priority):** Rename your methods to precisely match the requirements:
+    *   `frequency` should be `word_frequency` (Step 2).
+    *   `most_commun` should be `most_common_word` (Step 3).
+    *   `all_unique` should be `unique_words` (Step 4).
+- **Return Values Instead of Printing (High Priority):** Modify `word_frequency`, `most_common_word`, and `unique_words` to `return` their results instead of `print`ing them. Methods should typically return values so they can be used programmatically (e.g., stored in variables, passed to other functions) rather than just displaying output (Steps 2, 3, 4).
+- **Correct `unique_words` Logic:** The `unique_words` method (currently `all_unique`) should return all distinct words present in the text, not just words that appear exactly once. Use a `set` for this, as suggested in Step 4. For example: `return list(set(self.text.split()))` after cleaning/normalizing words.
+- **Handle `word_frequency` 'Not Found' Case:** For `word_frequency`, if the word is not found, `return None` or a meaningful message as specified in Step 2, instead of printing `0`.
+- **Optimize Word Tokenization:** Consider splitting the text into words (`self.text.split()`) once in the `__init__` method and storing it in an attribute (e.g., `self.words`). This avoids repeatedly splitting the same text whenever `word_frequency`, `most_common_word`, or `unique_words` are called, improving performance for multiple method calls.
+- **Normalize Text:** For accurate text analysis (especially `word_frequency` and `most_common_word`), convert words to a consistent case (e.g., all lowercase) and remove punctuation *before* analysis. This can be handled by the `TextModification` class methods and then applied to the `Text` instance.
+- **Remove Redundant Comments:** Delete the comments that are just copy-pasted instructions from the prompt. Instead, add comments that explain complex logic or design decisions within your code where necessary.
+Brief justification:
+- correctness: The correctness score is low (25%) because a significant portion of the requirements are not implemented or are implemented incorrectly:
+    *   **Missing `from_file` class method (Step 5):** The file reading and `Text` instance creation from a file are done outside the class, completely missing the required class method.
+    *   **Missing `TextModification` class and its methods (Steps 6-9):** The entire 'Bonus' section, including the class inheritance and text cleaning methods, is absent from the code.
+    *   **Incorrect Method Naming (Steps 2, 3, 4):** Method names like `frequency`, `most_commun`, and `all_unique` do not match the specified `word_frequency`, `most_common_word`, and `unique_words`.
+    *   **Incorrect Return Values (Steps 2, 3, 4):** All analysis methods `print` their results instead of `return`ing them as explicitly required, limiting their reusability.
+    *   **Incorrect `unique_words` Logic (Step 4):** The `all_unique` method identifies words that appear exactly once (singletons) rather than all distinct words in the text, which is the standard interpretation of 'unique words' and deviates from the suggestion to use a set.
+- readability: The readability score is 70%.
+    *   **Positives:** The code is generally well-formatted with consistent indentation.
+    *   **Negatives:** The method names (`frequency`, `most_commun`, `all_unique`) do not match the instructions, which can cause confusion when comparing the code to the requirements. The `all_unique` method name and variable name within it are misleading given the actual logic (finding single-occurrence words, not all unique words). Many comments are simply copy-pasted instructions, not value-adding explanations of the code itself.
+- performance: The performance score is 80%.
+    *   **Positives:** The implemented methods utilize efficient data structures like `collections.Counter` for word frequency counting, which is optimal for this task. The core algorithms for counting and finding the most common word are efficient.
+    *   **Negatives:** There's a minor performance overhead because `self.text.split(' ')` is called independently in each analysis method (`frequency`, `most_commun`, `all_unique`). For large texts or multiple method calls, it would be more efficient to perform this tokenization once (e.g., in `__init__` or lazily loading it) and store the list of words as an attribute.
+- security: The security score is 95%.
+    *   **Positives:** The code uses `with open(...)` for file handling, which is a best practice that ensures files are properly closed, preventing resource leaks. There's no direct handling of untrusted user input that could lead to common vulnerabilities like injection. The scope of the application is limited to text analysis, which inherently carries low security risks.
+    *   **Negatives:** There are no significant security concerns or vulnerabilities identified in the provided code snippet.
+
