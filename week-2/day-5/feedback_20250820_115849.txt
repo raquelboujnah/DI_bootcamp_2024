@@ -1,0 +1,18 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-5/daily_challenge.py
+suggestions for improvement:
+- **For Challenge 1:**
+- 1.  **Output Format Correction:** Change `" ".join(lst_input)` to `",".join(lst_input)` to ensure the words are separated by commas, as explicitly stated in the instructions and shown in the expected output.
+- 2.  **Function Naming:** Rename the function `reverse` to a more descriptive name, such as `sort_words_challenge1` or `sort_comma_separated_string`, to accurately reflect its purpose.
+- **For Challenge 2:**
+- 1.  **Function Signature Adherence:** Modify the `longuest` function to accept the sentence as a *parameter* (e.g., `def longest_word(sentence):`) instead of prompting the user for input inside the function. This aligns with the instruction: "Write a function that takes a sentence as input."
+- 2.  **Return Value Adherence:** Change the function to `return longuest_word` instead of `print(longuest_word)`. The instructions explicitly state the function "returns the longest word."
+- 3.  **Function Name Correction:** Correct the typo in the function name from `longuest` to `longest`.
+- 4.  **Demonstrate Usage:** After defining the `longest_word` function, add example calls using the provided test cases to show it works as expected (e.g., `print(longest_word("Margaret's toy is a pretty doll."))`).
+Brief justification:
+- correctness: The code significantly deviates from the explicit instructions for both challenges:
+*   **Challenge 1:** The output format is incorrect; it uses spaces instead of commas (`" ".join`) contrary to the requirement for comma separation. The function name `reverse` is also misleading for a sorting task.
+*   **Challenge 2:** The function does not take a sentence as a *parameter* as required, instead using `input()` inside the function. It `prints` the result instead of `returning` it, which is a fundamental deviation from the function's specified behavior. There is also a typo in the function name (`longuest` instead of `longest`). While the core logic for finding the longest word is correct, the implementation of the function's interface (input/output) is incorrect.
+- readability: The variable names within both functions are generally clear and descriptive. However, the function names themselves (`reverse` for sorting, `longuest` with a typo for longest) significantly detract from readability, making the code's purpose less intuitive at a glance. Correcting these names would greatly improve clarity.
+- performance: The code utilizes Python's built-in string methods (`split`, `join`), list methods (`sort`), and functions (`max`, `len`), all of which are highly optimized in C and perform efficiently. For the typical string lengths and word counts expected in these challenges, there are no notable performance bottlenecks or inefficiencies.
+- security: The code uses `input()` directly, which in general can pose security risks if the input is later used in system commands, file paths, or evaluated as code. However, for these specific challenges, where the input is solely processed as a string for sorting or word length comparison, the direct use of `input()` does not introduce significant vulnerabilities. No shell injection or arbitrary code execution risks are present here.
+
