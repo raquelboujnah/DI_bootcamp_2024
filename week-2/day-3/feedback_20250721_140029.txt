@@ -1,0 +1,18 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-3/daily_challenge.py
+suggestions for improvement:
+- Challenge 1 is completely unimplemented. The provided code attempts to create a dictionary but contains errors and does not align with the challenge's requirements.
+- Challenge 2 is partially implemented but contains significant errors.  The code does not correctly handle string-to-number conversion, list manipulation, or sorting.  It also introduces unrelated ticket pricing logic.
+- Error handling is missing.  The code should gracefully handle cases where input is invalid (e.g., non-numeric wallet amount).
+- The code lacks comments to explain the logic, making it harder to understand.
+- The `convert_value` variable is used without being defined. This is a significant error.
+- The comparison `if len(items_list) = 0:` uses an assignment operator (=) instead of a comparison operator (==).
+- The loop `for i in num_people:` iterates over the digits of the string `num_people` instead of iterating a specified number of times. The age logic is also flawed and inconsistent.
+- Separate the Challenge 1 and Challenge 2 code into distinct functions or blocks for better organization and readability.
+- Add comprehensive error handling (try-except blocks) for robust input validation.
+- Implement proper string-to-number conversion using `int()` after removing '$' and ',' characters.
+Brief justification:
+- correctness: Challenge 1 receives 0% because it's not implemented at all. Challenge 2 receives 20% because it attempts to address part of the problem (iterating through the items dictionary), but fails in critical aspects like data cleaning, comparison, and output formatting.  The added ticket pricing logic is completely unrelated to the chapter's content. The code does not fulfill the requirements for either challenge, deviating significantly from the specified input/output examples.
+- readability: The code lacks comments and clear structure. The variable names are not very descriptive. The inclusion of unrelated code further reduces readability. A score of 40% reflects the partial clarity.
+- performance: The current implementation is inefficient due to errors and the lack of proper data conversion.  If corrected, it would have acceptable performance, hence a 50% score.
+- security: The code doesn't contain any security vulnerabilities, as it only handles user input and performs basic string and numerical operations. Therefore, it achieves a score of 100%.
+

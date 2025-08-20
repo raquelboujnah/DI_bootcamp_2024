@@ -1,0 +1,14 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-3/daily_challenge.py
+suggestions for improvement:
+- Challenge 1: The code for Challenge 1 doesn't correctly implement the logic.  The `if index in word_list:` check is incorrect; it should check if the `letter` is a key in `word_list`. The code also doesn't handle the case where the input is an empty string.
+- Challenge 2: The code for Challenge 2 is mostly correct.  However, it would be more robust to handle potential `ValueError` exceptions during type conversion, and the input validation could be improved. The additional ticket pricing calculation is completely outside the scope of Challenge 2.
+- Remove unrelated code: The ticket pricing calculation at the end is unrelated to the challenges and should be removed.
+- Improve input validation: Add input validation to ensure the user provides valid input (e.g., a non-empty string for the word in Challenge 1, and a numerical value for the wallet in Challenge 2).
+- Error Handling: Wrap the `int()` conversion in `try-except` blocks to gracefully handle cases where the input string cannot be converted to an integer.
+- Comments: Add more comments to explain the logic and steps involved in the code.
+Brief justification:
+- correctness: Challenge 1's code has a logical error in its dictionary construction, resulting in an incorrect solution. Challenge 2's code is mostly functional but includes irrelevant code.  The score reflects the partial correctness in Challenge 2 but accounts for the completely incorrect Challenge 1 solution and unrelated code.
+- readability: The code is generally readable. However, more descriptive variable names and comments would enhance understanding. The structure is decent, but could be improved with better organization and separation of concerns.
+- performance: The performance is reasonably good for the small-scale tasks, but better algorithms for dictionary creation in Challenge 1 could improve efficiency.  The code efficiently handles string manipulation and number conversions.
+- security: The code has decent security.  The main vulnerability lies in the lack of input validation which could lead to errors or unexpected behavior if the user enters invalid data.  The addition of `try-except` blocks would mitigate this vulnerability.
+

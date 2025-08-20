@@ -1,0 +1,12 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-1/daily-challenge.py
+suggestions for improvement:
+- The code does not address any of the exercises in the provided chapter content. It focuses on password validation and string manipulation, which are not part of the chapter's learning objectives.
+- The loop that appends characters to the 'word' variable is inefficient and unnecessary.  String concatenation inside a loop is inefficient; it creates many temporary strings.  Python's string join method is far more efficient.
+- The code lacks security considerations.  Printing the password back to the console is a major security vulnerability.
+- The chapter focuses on data structures (sets, lists, tuples) and control flow (for and while loops). This code only uses basic string manipulation and conditional statements, ignoring the core concepts of the chapter.
+Brief justification:
+- correctness: The code is completely irrelevant to the chapter content.  The chapter focuses on sets, lists, tuples, and loop structures to accomplish specific tasks; this code performs password validation and simple string manipulation, which are not mentioned in the chapter's exercises or learning objectives. Therefore, the correctness score is 0.
+- readability: The code is relatively readable, with clear variable names and indentation. However, the unnecessary loop and lack of comments reduce readability. The use of f-strings improves readability.
+- performance: The performance of the password validation part is excellent (O(1) complexity). However, the loop used to build the 'word' variable is inefficient.  The loop iterates over each character in the string and concatenates it to the growing string in each iteration, leading to O(n^2) complexity where n is the length of the password. String concatenation using the join method would be significantly more efficient. 
+- security: The code is insecure because it prints the entered password back to the console.  This is a major security vulnerability and should never be done in a real-world application.
+

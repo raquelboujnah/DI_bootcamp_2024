@@ -1,0 +1,13 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-3/xp_exercise.py
+suggestions for improvement:
+- Exercise 1: The code attempts to use `append` on a dictionary, which is incorrect.  Dictionaries are created using curly braces `{}` or dictionary comprehensions. The `zip` function should be used to combine keys and values.
+- Exercise 2: The code has multiple syntax errors and logical flaws. It attempts to use `zip_family.items()` before defining `zip_family` and it mixes up the conditional statements and the total cost calculation.
+- Exercise 3: There are several errors, including an incorrect attempt to append to a string (`'international_competitors'.append(...)`), using `delete` (not a Python keyword), accessing the dictionary incorrectly (`print(brand[keys]())`) and an incorrect attempt to merge dictionaries using key-value pair assignments (`brand[more_on_zara.keys] = more_on_zara.values()`).
+- Exercise 4: The code contains logical errors and uses incorrect syntax. `range(user)` is not valid, and the loop in `disney_users_c` tries to sort a string instead of a list of names.  The conditional checks in `disney_users_d` and `disney_users_e` are also flawed.
+- Overall: The code demonstrates a fundamental lack of understanding of basic Python syntax and data structures (dictionaries, lists, loops).  Many parts are syntactically incorrect and will not run.  The logic in many of the exercises is also flawed, even where the syntax is mostly correct.
+Brief justification:
+- correctness: The code for almost none of the exercises correctly implements the tasks described in the Chapter Content/Questions.  The provided solutions are filled with errors.  Only a small fragment of Exercise 2, calculating the total cost from a predefined family dictionary, partially works but its methodology is inefficient and improperly implemented.  The rest shows no understanding of dictionaries or other data structures.  Therefore, the correctness score is very low.
+- readability: The code is poorly formatted, with inconsistent spacing and naming conventions.  The code is hard to follow and understand, making it difficult to debug.  The lack of comments makes the code's purpose even more unclear.  Many parts are fundamentally wrong, so readability is affected.
+- performance: Given that much of the code doesn't run due to syntax errors, performance is not a relevant aspect to evaluate. Where small fragments of code execute correctly, the performance is acceptable but not optimized. 
+- security: There are no significant security concerns in this code because it doesn't interact with external systems or handle sensitive data.  The primary issues are related to correctness and readability.
+

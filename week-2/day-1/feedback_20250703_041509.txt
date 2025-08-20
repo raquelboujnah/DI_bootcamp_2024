@@ -1,0 +1,11 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-2/day-1/xp-exercise.py
+suggestions for improvement:
+- In exercise 3, the code should provide the actual Python code output instead of just the answers.  The `TypeError` should be shown as the actual error message (not just 'TypeError').
+- In exercise 6, the condition `a >= b`  might not align with the instructions which specify that the print statement should execute only if 'a' is strictly *bigger* than 'b'.  Consider changing this to `a > b`.
+- Exercise 9 asks for height in *centimeters*, but the code requests height in *inches*.  Adjust the input prompt and potentially the comparison value (145cm is approximately 57 inches).
+Brief justification:
+- correctness: The code correctly addresses most of the exercises.  Exercise 1 uses a concise string multiplication for the repeated output. Exercises 2, 4, 5, 7 show appropriate variable handling and calculations. The if-else structure in exercise 7 is correct for odd/even checking.  However, exercise 3 only gives answers and not code output, and there is a minor error in exercises 6 and 9 as mentioned in the feedback.
+- readability: The code is generally readable with clear variable names and consistent formatting. The use of f-strings improves readability.  However, exercise 3's structure could be improved by actually showing the Python interpreter's response to those comparisons.
+- performance: The code is efficient for its purpose. There are no obvious performance bottlenecks.
+- security: No security concerns are present in this code as it does not interact with any external resources or handle user input in an insecure manner.
+
