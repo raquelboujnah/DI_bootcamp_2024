@@ -1,0 +1,32 @@
+URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-1/xp_exercise.py
+suggestions for improvement:
+- **Exercise 1: Cats**
+- 1. Ensure `cat_age` is passed as an integer (e.g., `3` instead of `'3'`) to allow for correct numerical comparison.
+- 2. Modify the `oldest_cat` function to explicitly `return` the oldest cat object as requested, rather than printing directly inside the function. Print the result after calling the function.
+- 3. Adjust the print statement for the oldest cat to precisely match the requested format: "The oldest cat is `<cat_name>`, and is `<cat_age>` years old."
+- 
+- **Exercise 2: Dogs**
+- 1. In the `bigger` function, correct the variable name `oldest_dog` to something more appropriate like `biggest_dog` or `tallest_dog` as it refers to height, not age. Also, correct the print statement to refer to a 'dog' instead of 'cat' and use appropriate phrasing for size (e.g., 'tall' or 'big').
+- 2. The `describe` method was not explicitly requested in the instructions; consider removing it if it's not essential for the exercise's goals.
+- 3. Use the more conventional method call syntax, e.g., `david_dog.bark()` instead of `Dog.bark(david_dog)`. This applies to `Dog.describe` and `Dog.jump` calls as well.
+- 
+- **Exercise 3: Who's the song producer?**
+- 1. In the `Song` class's `__init__` method, correct the parameter default value. `lyrics = list` makes the `list` type itself the default. It should just be `__init__(self, lyrics)` if `lyrics` is always provided, or `__init__(self, lyrics: list)` for a type hint. If an empty list default is desired, use `lyrics=None` and handle it, or `lyrics=[]` with caution.
+- 2. Use the more conventional method call syntax, e.g., `stairway.sing_me_a_song()` instead of `Song.sing_me_a_song(stairway)`.
+- 
+- **Exercise 4: Afternoon at the Zoo**
+- 1. Revise the `get_groups()` method: it should iterate through the dictionary produced by `sort_animals()` and `print` each group in the exact format specified in the instructions (e.g., `B: ['Baboon', 'Bear']`), rather than returning a new dictionary with integer keys.
+- 2. Consider making `sort_animals` store the grouped animals as an instance attribute (e.g., `self._grouped_animals`) rather than just returning it, so `get_groups` can access a potentially pre-computed result directly. However, calling `sort_animals()` internally from `get_groups()` is also acceptable if `get_groups()` correctly prints the output.
+- 3. For very large numbers of animals, the `add_animal` method's `if new_animal not in self.animals` check can become slow as it's an O(N) operation. For truly massive datasets, consider using a `set` for `self.animals` if only uniqueness and fast lookup are needed, but for typical 'zoo' sizes, the current list implementation is perfectly adequate.
+Brief justification:
+- correctness: **Exercise 1 (Cats):** The code fails to correctly find the oldest cat because `cat_age` is initialized as a string (`'3'`, `'4'`, `'1'`), leading to lexicographical string comparison instead of numerical comparison (e.g., `'10'` is less than `'9'`). Additionally, the `oldest_cat` function prints the result directly instead of returning the object as specified in the instructions, and the print format is slightly off.
+
+**Exercise 2 (Dogs):** The `bigger` function contains logical errors: it uses a variable named `oldest_dog` and its print statement refers to 'cat' and 'oldest', despite the exercise being about comparing dog *sizes*. The `describe` method was not requested, and the method calls `Dog.method(instance)` are not the most conventional Pythonic way.
+
+**Exercise 3 (Song):** The `__init__` method's default parameter `lyrics = list` is incorrect; it uses the `list` type object itself as the default, which is a common Python pitfall. While the example provided works because `lyrics` is explicitly passed, this default is problematic if the function were called without the `lyrics` argument. Similar to Exercise 2, method calls are less idiomatic.
+
+**Exercise 4 (Zoo):** The `get_groups()` method's implementation significantly deviates from the instructions. It returns a new dictionary with integer keys, which is completely different from the requested example output format (e.g., `B: ['Baboon', 'Bear']`) and the instruction to *print* the grouped animals. This is a major functional error regarding the specified output.
+- readability: The code is generally easy to follow, using clear variable names and f-strings for formatting. The structure separates exercises logically. However, readability is slightly impacted by the non-idiomatic `Class.method(instance)` calls (e.g., `Dog.bark(david_dog)`), and the confusing variable names and print statements in Exercise 2's `bigger` function (e.g., `oldest_dog` referring to size, and mentioning 'cat').
+- performance: For the typical scale of data implied by these exercises (e.g., a few cats, dogs, or zoo animals), the performance is excellent. No algorithms used have excessive time complexity for small inputs. The use of `in` for list checks in `add_animal` (Exercise 4) is O(N), which could be a concern for extremely large lists, but it's entirely acceptable for the practical scenario of a zoo's animal list.
+- security: The provided code does not handle any external inputs (user input, files, network), nor does it involve any sensitive operations. There are no apparent security vulnerabilities in this code.
+
