@@ -1,0 +1,19 @@
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-5/daily_challenge.py
+suggestions for improvement:
+- **Redesign the `Card` class:** The `Card` class should represent a single card with a `suit` and a `value` as its attributes, not a factory for all 52 cards. Modify its `__init__` method to accept `suit` and `value` as parameters (e.g., `def __init__(self, suit, value): self.suit = suit; self.value = value`). Consider adding a `__str__` method for better card representation (e.g., `def __str__(self): return f'{self.value}{self.suit}'`).
+- **Encapsulate cards within the `Deck` class:** The `Deck` class should manage its own collection of `Card` objects internally. The `__init__` method of the `Deck` class should be responsible for creating all 52 `Card` objects and storing them in an instance attribute (e.g., `self.cards`). This aligns with OOP principles of encapsulation, which is a key concept listed in the learning objectives.
+- **Improve `Deck.shuffle` method:** This method should operate on the `Deck`'s internal `self.cards` attribute. To truly "make sure the deck of cards has all 52 cards", the `shuffle` method (or a separate `reset_deck` method) should recreate a full set of 52 `Card` objects if the deck is not full, or at least raise an error if it's meant to strictly operate on a full deck. Remove print statements that are for debugging, as they are not part of the core functionality.
+- **Improve `Deck.deal` method:** This method should also operate on the `Deck`'s internal `self.cards` attribute. Remove print statements that are for debugging. The current use of `pop()` is correct for removing a card.
+- **Remove global variable usage:** The `deck_cards` variable created outside the classes (`crd = Card(); deck_cards = crd.cards`) and passed into `Deck` methods breaks encapsulation. All card management should be internal to the `Deck` class.
+Correctness: 40%
+-----
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-5/quiz.txt
+suggestions for improvement:
+- **Refine Class Definition:** Clarify that a class is a blueprint for creating objects, defining both attributes (data) and methods (behaviors). The current description as a 'big box' is too informal.
+- **Improve Encapsulation Definition:** Emphasize that encapsulation involves bundling data and the methods that operate on that data into a single unit (the class). While it correctly mentions access control, it misses the bundling aspect.
+- **Correct Abstraction Definition:** Remove the confusing phrase 'take the data and store into many places'. Abstraction is primarily about hiding complex implementation details and exposing only essential functionality to the user.
+- **Rectify Polymorphism Definition:** The current definition of polymorphism is incorrect. Polymorphism is about objects of different classes being able to respond to the same message (method call) in different ways, or being treated as instances of a common type. It is not the 'opposite of multiple inheritance' nor a superclass having multiple children.
+- **Clarify MRO Explanation:** While the general concept is understood, the explanation of Python's MRO ('from bottom to top and left to right') could be more precise by referencing the C3 linearization algorithm or describing it as a depth-first, then left-to-right search for methods in the inheritance hierarchy.
+- **Address Grammatical Errors and Formalism:** Review the answers for grammatical errors (e.g., 'who will contain', 'creact', 'istance', 'multiply inheritance', 'his attribute his methods', 'he want') and strive for more formal and precise technical language.
+Correctness: 65%
+-----
