@@ -1,0 +1,28 @@
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-4/xp_exercise.py
+suggestions for improvement:
+- **Exercise 1 - `get_words_from_file` Function:** Modify the function to properly extract words from the file. Instead of `readlines()`, use `file.read().split()` to get a list of words and then strip any leading/trailing whitespace (including newlines) from each word. Additionally, the instruction states the function should take the file path as an argument, but the current code hardcodes it.
+- **Exercise 1 - `get_random_sentence` Function:** Pass the list of words as an argument to this function, rather than calling `get_words_from_file()` inside it. This prevents redundant file reads if the function were to be called multiple times. Also, if the goal is strictly lowercase as stated in the instructions, remove the `.capitalize()` call. If standard sentence casing is desired, this is acceptable, but it deviates from the explicit instruction.
+- **Exercise 1 - `main` Function (Crucial):** Implement robust input validation and error handling. The current `int(input(...))` call is outside the `try` block, meaning a `ValueError` (e.g., if the user types text) will crash the program before the `try-except` is even reached. Wrap `int(input(...))` in the `try` block. Furthermore, the program currently does not print an error message or exit if the user enters a valid integer that is *out of the specified range* (2-20); it just silently proceeds without generating a sentence. Use a loop (e.g., `while True`) to repeatedly ask for input until valid input is provided, providing clear error messages for different types of invalid input (non-integer vs. out-of-range). Use `sys.exit()` to terminate the program gracefully upon invalid input if that's the desired behavior (remember to `import sys`).
+- **Exercise 2 - JSON Saving:** When saving the modified JSON to a file using `json.dump()`, include the `indent` parameter (e.g., `json.dump(dict1, file, indent=4)`) to make the output file more readable, as explicitly requested in the instructions.
+- **General Improvement:** Add docstrings to all functions (`get_words_from_file`, `get_random_sentence`, `main`) to describe their purpose, arguments, and return values. This significantly improves code readability and maintainability.
+- **General Improvement:** Consider structuring your script with an `if __name__ == '__main__':` block to ensure `main()` is called only when the script is executed directly.
+Correctness: 60%
+-----
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-4/the_stranger.txt
+suggestions for improvement:
+- The submitted content is the complete text of Albert Camus's novel 'The Stranger,' not Python code. To complete the exercises, please provide the actual Python code that addresses the requirements for 'Exercise 1: Random Sentence Generator' and 'Exercise 2: Working with JSON.'
+- Ensure the Python code adheres to the specific instructions for each exercise, including handling file reading, data structures, random number generation, string manipulation, JSON processing, and input validation as specified.
+- For 'Exercise 1', implement the `get_words_from_file`, `get_random_sentence`, and `main` functions as described, ensuring proper error handling for file operations and input validation for sentence length.
+- For 'Exercise 2', write Python code to import `json`, parse the provided `sampleJson` string, access the 'salary' key, add the 'birth_date' key to the 'employee' dictionary, and then save the modified JSON to a file with appropriate indentation.
+Correctness: 0%
+-----
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-4/random_word.txt
+suggestions for improvement:
+- Checker failed to provide a response.
+Correctness: N/A%
+-----
+URL: URL: https://github.com/raquelboujnah/DI_bootcamp_2024/blob/main/week-3/day-4/dict1.json
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
